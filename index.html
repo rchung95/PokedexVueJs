@@ -4,19 +4,15 @@
 		<title>Pokedex</title>
 	</head>
 	<body>
-		<table id="app1">
+		<table id="pokedex">
 			<thead>
 				<tr>
-					<th>Ndex</th>
-					<th>Name</th>
-					<th>Type</th>
+					<th v-for="columnName in pokeColumn" v-on:click="sortTable(columnName)">{{ columnName }}</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr v-for="pokemon in pokemonList">
-					<td>{{ pokemon.id }}</td>
-			     	<td>{{ pokemon.name }}</td>
-			     	<td>{{ pokemon.type }}</td>
+					<td v-for="column in pokeColumn">{{ pokemon[column] }}</td>
 				</tr>
 			</tbody>
 		</table>
