@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pokedex</title>
+	</head>
+	<body>
+		<div id="app1">
+			<ol>
+				<pokedex
+					v-for="poke in pokemonList"
+					v-bind:todo="poke"
+					v-bind:key="poke.id">
+				</pokedex>
+			</ol>
+		</div>
+		<script src="https://unpkg.com/vue"></script>
+		<script type="text/javascript" src="./index.js"></script>
+	</body>
+</html>
