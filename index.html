@@ -2,9 +2,18 @@
 <html>
 	<head>
 		<title>Pokedex</title>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
 	</head>
 	<body>
-		<table id="pokedex">
+		<div class="field has-addons container">
+			<div class="control is-expanded">
+				<input type="text" class="input" name="search" placeholder="Search for a Pokemon">
+			</div>
+			<div class="control">
+				<a class="button is-info">Search</a>
+			</div>
+		</div>
+		<table id="pokedex" class="table is-fullwidth is-striped">
 			<thead>
 				<tr>
 					<th v-for="columnName in pokeColumn" v-on:click="sortTable(columnName)">{{ columnName }}</th>
