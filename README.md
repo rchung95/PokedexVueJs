@@ -4,7 +4,7 @@
 To learn a new JS language alongside another frontend framework similar to Bootstrap.
 
 ## TODO
-- Search functionality
+- Search functionality (~~search a name~~, multiple categories)
 - Stylize it
 - Add routing, so you can view individual pokemon and its statistics
 
