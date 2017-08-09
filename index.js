@@ -26,15 +26,15 @@ var pokedex = new Vue({
 		sortcolumn: '',
 		search: '',
 		pokemonList: [
-			{ nDex: 1, name: 'Bulbasaur', type: 'Grass/Poison' },
-			{ nDex: 2, name: 'Ivysaur', type: 'Grass/Poison' },
-      		{ nDex: 3, name: 'Venusaur', type: 'Grass/Poison' },
-      		{ nDex: 4, name: 'Charmander', type: 'Fire' },
-      		{ nDex: 5, name: 'Charmeleon', type: 'Fire' },
-      		{ nDex: 6, name: 'Charizard', type: 'Fire/Flying' },
-      		{ nDex: 7, name: 'Squirtle', type: 'Water' },
-      		{ nDex: 8, name: 'Wartortle', type: 'Water' },
-      		{ nDex: 9, name: 'Blastoise', type: 'Water' }
+			{ nDex: 1, name: 'Bulbasaur', type1: 'Grass', type2: 'Poison' },
+			{ nDex: 2, name: 'Ivysaur', type1: 'Grass', type2: 'Poison' },
+      		{ nDex: 3, name: 'Venusaur', type1: 'Grass', type2: 'Poison' },
+      		{ nDex: 4, name: 'Charmander', type1: 'Fire', type2: '' },
+      		{ nDex: 5, name: 'Charmeleon', type1: 'Fire', type2: '' },
+      		{ nDex: 6, name: 'Charizard', type1: 'Fire', type2: 'Flying' },
+      		{ nDex: 7, name: 'Squirtle', type1: 'Water', type2: '' },
+      		{ nDex: 8, name: 'Wartortle', type1: 'Water', type2: '' },
+      		{ nDex: 9, name: 'Blastoise', type1: 'Water', type2: '' }
 		]
 	},
 
@@ -69,7 +69,9 @@ var pokedex = new Vue({
 		},
 		// Still need to implement the search for nation pokedex number
 		"filteredPokemon": function() {
-			return this.pokemonList.filter(pokemon => { return (pokemon.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0 || pokemon.type.toLowerCase().indexOf(this.search.toLowerCase()) >= 0); });
+			return this.pokemonList.filter(pokemon => { 
+				return (pokemon.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0 || pokemon.type1.toLowerCase().indexOf(this.search.toLowerCase()) >= 0 || pokemon.type2.toLowerCase().indexOf(this.search.toLowerCase()) >= 0 || pokemon.nDex.toString().indexOf(this.search.toString()) >= 0); 
+			});
 		}
 	}
 })
