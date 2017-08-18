@@ -19,14 +19,23 @@
 // In filteredPokemon, it is used as part of the search functionality to find the matching data based on its
 // name. I plan to expand this by having multiple filter which will definitely be a challenge.
 
+function isActive() {
+	document.getElementById("asdfg").classList.add("is-active");
+}
+
+function notActive() {
+	document.getElementById("asdfg").classList.remove("is-active");
+}
+
 var pokedex = new Vue({
 	el: '#pokedex',
 	data: {
 		ascending: false,
 		sortcolumn: '',
 		search: '',
+		current: 0,
 		pokemonList: [
-			{ nDex: 1, name: 'Bulbasaur', type1: 'Grass', type2: 'Poison' },
+			{ nDex: 1, name: 'Bulbasaur', type1: 'Grass', type2: 'Poison', hp: 45, atk: 49, def: 49, spatk: 65, spdef: 65, spe: 45 },
 			{ nDex: 2, name: 'Ivysaur', type1: 'Grass', type2: 'Poison' },
       		{ nDex: 3, name: 'Venusaur', type1: 'Grass', type2: 'Poison' },
       		{ nDex: 4, name: 'Charmander', type1: 'Fire', type2: '' },
@@ -57,6 +66,10 @@ var pokedex = new Vue({
 					return ascending ? -1 : 1;
 				}
 			})
+		},
+
+		specificValue(uniqueStrValue) {
+			return this.pokemonList.filter((item) => item.name === uniqueStrValue)[0].hp
 		}
 	},
 
