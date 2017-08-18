@@ -19,14 +19,6 @@
 // In filteredPokemon, it is used as part of the search functionality to find the matching data based on its
 // name. I plan to expand this by having multiple filter which will definitely be a challenge.
 
-function isActive() {
-	document.getElementById("asdfg").classList.add("is-active");
-}
-
-function notActive() {
-	document.getElementById("asdfg").classList.remove("is-active");
-}
-
 var pokedex = new Vue({
 	el: '#pokedex',
 	data: {
@@ -34,6 +26,12 @@ var pokedex = new Vue({
 		sortcolumn: '',
 		search: '',
 		current: 0,
+		hp: 0,
+		atk: 0,
+		def: 0,
+		spatk: 0,
+		spdef: 0,
+		spe: 0,
 		pokemonList: [
 			{ nDex: 1, name: 'Bulbasaur', type1: 'Grass', type2: 'Poison', hp: 45, atk: 49, def: 49, spatk: 65, spdef: 65, spe: 45 },
 			{ nDex: 2, name: 'Ivysaur', type1: 'Grass', type2: 'Poison' },
@@ -54,6 +52,56 @@ var pokedex = new Vue({
 	},
 
 	methods: {
+		"chartMe": function (hp, atk, def, spatk, spdef, spe) {
+			this.hp = hp
+			this.atk = atk
+			this.def = def
+			this.spatk = spatk
+			this.spdef = spdef
+			this.spe = spe
+
+			document.getElementById("asdfg").classList.add("is-active");
+
+			var ctx = document.getElementById("myChart").getContext('2d');
+			ctx.canvas.width = 100;
+			ctx.canvas.height = 100;
+
+			var myRadarChart = new Chart(ctx, {
+			    type: 'radar',
+			    data: {
+			    	labels: ["Hit Point", "Attack", "Defense", "Special Attack", "Special Defense", "Speed"],
+			    	datasets: [{
+			    		label: 'Stats',
+						data: [ this.hp, this.atk, this.def, this.spatk, this.spdef, this.spe],
+						backgroundColor: [
+					    	'rgba(255, 99, 132, 0.2)'
+					    ],
+					    borderColor: [
+					    	'rgba(255, 99, 132, 1)'
+					    ],
+					    borderWidth: 2
+			    	}]
+			    },
+			    options: {
+				scale: {
+		              ticks: {
+		                beginAtZero: true
+		              }
+		            }
+			    }
+			});
+		},
+
+		"unChartMe": function() {
+			document.getElementById("asdfg").classList.remove("is-active");
+		},
+
+		// Currently not working; need to fix
+		"addData": function(something) {
+			myRadarChart.data.datasets[0].data[3] = something.value;
+			myRadarChart.update();
+		},
+
 		"sortTable": function sortTable(column) {
 			this.ascending = (this.sortcolumn === column) ? !this.ascending : true
 			this.sortcolumn = column;
@@ -66,11 +114,8 @@ var pokedex = new Vue({
 					return ascending ? -1 : 1;
 				}
 			})
-		},
-
-		specificValue(uniqueStrValue) {
-			return this.pokemonList.filter((item) => item.name === uniqueStrValue)[0].hp
 		}
+
 	},
 
 	computed: {
@@ -80,7 +125,7 @@ var pokedex = new Vue({
 			}
 		return Object.keys(this.pokemonList[0])
 		},
-		// Still need to implement the search for nation pokedex number
+
 		"filteredPokemon": function() {
 			return this.pokemonList.filter(pokemon => { 
 				return (pokemon.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0 || pokemon.type1.toLowerCase().indexOf(this.search.toLowerCase()) >= 0 || pokemon.type2.toLowerCase().indexOf(this.search.toLowerCase()) >= 0 || pokemon.nDex.toString().indexOf(this.search.toString()) >= 0); 

@@ -5,23 +5,18 @@
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
 	</head>
 	<body>
-
-		<div class="container">
-			<button onclick="isActive()">Click me</button>
-		</div>
-
-		<div class="modal" id="asdfg">
-		  <div class="modal-background"></div>
-		  <div class="modal-content">
-			<canvas id="myChart" width="100px" height="100px"></canvas>
-			<input type="text" name="spatk" id="spatk">
-			<button class="is-large" onclick="adddata(spatk)">Add Data</button>
-		  </div>
-		  <button class="modal-close is-large" onclick="notActive()" aria-label="close"></button>
-		</div>
-
 		<div id="pokedex">
-			{{ specificValue('Bulbasaur') }}
+			<!-- Still debating whether to move this modal outside and change the vue code -->
+			<div id="asdfg" class="modal">
+				<div class="modal-background"></div>
+				<div class="modal-content">
+					<canvas id="myChart" width="100px" height="100px"></canvas>
+					<input type="text" name="spatk" id="spatk">
+					<button class="button is-large" v-on:click="addData(spatk)">Add Data</button>
+				</div>
+				<button class="modal-close is-large" v-on:click="unChartMe()" aria-label="close"></button>
+			</div>
+
 			<div class="field has-addons container">
 				<div class="control is-expanded">
 					<input type="text" class="input" name="search" v-model="search" placeholder="Search for a Pokemon">
@@ -38,7 +33,7 @@
 				</thead>
 				<tbody>
 					<tr v-for="pokemon in filteredPokemon">
-						<td v-for="column in pokeColumn">{{ pokemon[column] }}</td>
+						<td v-for="column in pokeColumn" v-on:click="chartMe(pokemon['hp'], pokemon['atk'], pokemon['def'], pokemon['spatk'], pokemon['spdef'], pokemon['spe'])">{{ pokemon[column] }}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -47,59 +42,5 @@
 		<script src="https://unpkg.com/vue"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 		<script type="text/javascript" src="./index.js"></script>
-		<script type="text/javascript" id="pokedex">
-			function adddata(something) {
-				myRadarChart.data.datasets[0].data[3] = something.value;
-				myRadarChart.update();
-			}
-
-			var ctx = document.getElementById("myChart").getContext('2d');
-			ctx.canvas.width = 100;
-			ctx.canvas.height = 100;
-
-			var hp = pokedex._data.pokemonList[0].hp;
-			var atk = pokedex._data.pokemonList[0].atk;
-			var def = pokedex._data.pokemonList[0].def;
-			var spatk = pokedex._data.pokemonList[0].spatk;
-			var spdef = pokedex._data.pokemonList[0].spdef;
-			var spe = pokedex._data.pokemonList[0].spe;
-
-			var myRadarChart = new Chart(ctx, {
-			    type: 'radar',
-			    data: {
-			    	labels: ["Hit Point", "Attack", "Defense", "Special Attack", "Special Defense", "Speed"],
-			    	datasets: [{
-			    		label: 'Stats',
-						data: [ hp, atk, def, spatk, spdef, spe],
-						backgroundColor: [
-					    	'rgba(255, 99, 132, 0.2)'
-					    ],
-					    borderColor: [
-					    	'rgba(255, 99, 132, 1)'
-					    ],
-					    borderWidth: 2
-			    	},
-			    	{
-			    		label: 'Stats with EV',
-						data: [93, 34, 22, 26],
-						backgroundColor: [
-					    	'rgba(255, 0, 255, 0.2)'
-					    ],
-					    borderColor: [
-					    	'rgba(255, 0, 255, 1)'
-					    ],
-					    borderWidth: 2
-			    	}]
-			    },
-			    options: {
-				scale: {
-		              ticks: {
-		                beginAtZero: true
-		              }
-		            }
-			    }
-			});
-
-		</script>
 	</body>
 </html>
