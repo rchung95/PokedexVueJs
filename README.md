@@ -9,7 +9,7 @@ To learn a new JS language alongside another frontend framework similar to Boots
   - ~~multiple categories~~
   - search questions
 - ~~Change type to type 1 and type 2 as some pokemon like Bulbasaur has multiple types~~
-- Add in the rest of the pokemon
+- ~~Add in the rest of the pokemon~~
 - Stylize it
   - Bulma (potentially remove it in favour of custom classes)
   - Custom clases
@@ -17,7 +17,8 @@ To learn a new JS language alongside another frontend framework similar to Boots
   - Lots of npm modules for Vue.js
 - IV/EV values
 - ~~Analytical graph?~~ Potentially D3.js to showcase its 6 stats and/or IV/EV
-- Rewrite js part so it aligns with vue.js code
+- ~~Rewrite js part so it aligns with vue.js code~~
+- ~~Build a web scraper~~
 
 Will add more if I can think of anything.
 
@@ -40,3 +41,40 @@ return this.pokemonList.filter(pokemon => {
 ```
 
 Now my search functionality works perfectly and I can search through multiple categories like nDex, name and even type! What I learned from this challenge I faced is if you cannot find an answer via google, think of how you would write this in another language.
+
+2. Using x-template
+As I decided to learn how to use templates instead, I had to slightly change my code in the HTML side for the modal to pop up. Unfornately I keep getting errors such as ```Property or method is not defined on the instance but referenced during render```. My initial thought is that the method call is out of scope as it was in ```pokedex``` and not ```poke-table```. After some searching, it turns out that x-template was the problem itself. Apparently you are supposed to put it in a new variable and call that variable when you want to use it as a Vue template. So it would look like this:
+```vue.js
+var pokeTable = {
+	template: '#poke-table',
+	props: {
+		data: Array,
+		columns: Array,
+		filterKey: String
+	},
+
+	data: function() {
+		var sortOrders = {}
+		this.columns.forEach(function(key) {
+			sortOrders[key] = 1
+		})
+		return {
+			sortKey: '',
+			sortOrders: sortOrders
+		}
+	},
+
+	computed: {...}
+	...
+};
+
+Vue.component('poke-table', pokeTable);
+```
+
+## Bugs that needs to be fix
+- When opening up the modal. The initial value is set to the previous stats of another Pokemon when hovering closely
+
+## Resources I used to learn
+- [Grid Component](https://vuejs.org/v2/examples/grid-component.html)
+- [x-template issue](https://github.com/vuejs/vue/issues/4276)
+- [Web Scraper tutorial](https://first-web-scraper.readthedocs.io/en/latest/#act-3-web-scraping)
