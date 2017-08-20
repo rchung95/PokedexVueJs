@@ -12,7 +12,7 @@ To learn a new JS language alongside another frontend framework similar to Boots
 - ~~Add in the rest of the pokemon~~
 - Stylize it
   - Bulma (potentially remove it in favour of custom classes)
-  - Custom clases
+  - ~~Custom clases~~
 - Use node.js to make it fully a web application and connect it to potentially a database
   - Lots of npm modules for Vue.js
 - IV/EV values
@@ -28,6 +28,7 @@ Will add more if I can think of anything.
 
 ## Challenges I faced
 1. Searching multiple categories
+
 One of the issues I faced within my search function is how to search through the data based on a number like 2. I been stuck on this problem for about a day. As I am still unfamilar with Vue.js, I thought that there was a way to filter out the data strictly using an int. I first attempted it using: 
 ```vue.js
 return this.pokemonList.filter(pokemon => { 
@@ -43,6 +44,7 @@ return this.pokemonList.filter(pokemon => {
 Now my search functionality works perfectly and I can search through multiple categories like nDex, name and even type! What I learned from this challenge I faced is if you cannot find an answer via google, think of how you would write this in another language.
 
 2. Using x-template
+
 As I decided to learn how to use templates instead, I had to slightly change my code in the HTML side for the modal to pop up. Unfornately I keep getting errors such as ```Property or method is not defined on the instance but referenced during render```. My initial thought is that the method call is out of scope as it was in ```pokedex``` and not ```poke-table```. After some searching, it turns out that x-template was the problem itself. Apparently you are supposed to put it in a new variable and call that variable when you want to use it as a Vue template. So it would look like this:
 ```vue.js
 var pokeTable = {

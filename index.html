@@ -3,6 +3,7 @@
 	<head>
 		<title>Pokedex</title>
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+		<link rel="stylesheet" type="text/css" href="./index.css">
 	</head>
 	<body>
 		<div id="pokedex">
@@ -30,7 +31,7 @@
 			<table class="table is-striped is-fullwidth">
 				<thead>
 					<tr>
-						<th v-for="key in columns" v-on:click="sortTable(key)" :class="{ active: sortKey == key }">
+						<th v-for="key in columns" v-on:click="sortTable(key)" :class="{ active: sortColumn == key }">
 							{{ key | capitalize }}
 						</th>
 					</tr>
@@ -38,7 +39,7 @@
 				<tbody>
 					<tr v-for="pokemon in filteredPokemon">
 						<td v-for="key in columns" v-on:click="chartMe(calcHP(pokemon['hp'], 1, 0, 0), calcStat(pokemon['atk'], 1, 0, 0), calcStat(pokemon['def'], 1, 0, 0), calcStat(pokemon['spatk'], 1, 0, 0), calcStat(pokemon['spdef'], 1, 0, 0), calcStat(pokemon['spe'], 1, 0, 0))">
-							{{ pokemon[key] }}
+							<span v-bind:class="[{'typeStructure' : classChecker(key)}, key == 'type1' ? pokemon.type1.toLowerCase() : '', key == 'type2' ? pokemon.type2.toLowerCase() : '' ]">{{ pokemon[key] }}</span>
 						</td>
 					</tr>
 				</tbody>

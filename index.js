@@ -27,7 +27,7 @@ var pokeTable = {
 			sortOrders[key] = 1
 		})
 		return {
-			sortKey: '',
+			sortColumn: '',
 			sortOrders: sortOrders
 		}
 	},
@@ -40,15 +40,18 @@ var pokeTable = {
 		*/
 
 		filteredPokemon: function() {
-			var sortKey = this.sortKey
+			var sortKey = this.sortColumn
 			var filterKey = this.filterKey && this.filterKey.toLowerCase()
 			var order = this.sortOrders[sortKey] || 1
 			var data = this.data
 
 			if (filterKey) {
 				data = data.filter(function(row) {
-					return Object.keys(row).some(function(key) {
-						return String(row[key]).toLowerCase().indexOf(filterKey) > -1
+					return Object.keys(row).some(function() {
+						return String(row['nDex']).toLowerCase().indexOf(filterKey) > -1
+							|| String(row['name']).toLowerCase().indexOf(filterKey) > -1
+							|| String(row['type1']).toLowerCase().indexOf(filterKey) > -1
+							|| String(row['type2']).toLowerCase().indexOf(filterKey) > -1
 					})
 				})
 			}
@@ -74,6 +77,9 @@ var pokeTable = {
 	},
 
 	methods: {
+		"classChecker": function(key) {
+			return key == 'type1' || key == 'type2'
+		},
 
 		"chartMe": function (hp, atk, def, spe, spdef, spatk) {
 			this.hp = hp
@@ -97,10 +103,10 @@ var pokeTable = {
 			    		label: 'Stats',
 						data: [ this.hp, this.atk, this.def, this.spatk, this.spdef, this.spe],
 						backgroundColor: [
-					    	'rgba(255, 99, 132, 0.2)'
+					    	'rgba(5, 98, 191, 0.8)'
 					    ],
 					    borderColor: [
-					    	'rgba(255, 99, 132, 1)'
+					    	'rgba(4, 80, 156, 0)'
 					    ],
 					    borderWidth: 2
 			    	}]
@@ -305,6 +311,12 @@ var pokedex = new Vue({
 	methods: {
 		"unChartMe": function() {
 			document.getElementById("asdfg").classList.remove("is-active");
+			this.hp = 0
+			this.atk = 0
+			this.def = 0
+			this.spatk = 0
+			this.spdef = 0
+			this.spe = 0
 		},
 
 		// Currently not working; need to fix
