@@ -11,13 +11,15 @@
 				<div class="modal-background"></div>
 				<div class="modal-content">
 					<canvas id="myChart" class="box" width="100px" height="100px"></canvas>
+					<input id="desiredlevel" name="level" value="1">
+					<button v-on:click="addData(this.pokedex.pokemonList[this.pokenDex])">Update</button>
 				</div>
 				<button class="modal-close is-large" v-on:click="unChartMe()" aria-label="close"></button>
 			</div>
 
 			<form id="search">
 				<div class="container">
-					<input type="search" name="query" class="input" v-model="searchQuery" placeholder="Search for a Pokemon">
+					<input type="search" name="query" class="input is-large" v-model="searchQuery" placeholder="Search for a Pokemon">
 				</div>
 				<poke-table :data="pokemonList" :columns="pokColumns" :filter-key="searchQuery">
 				</poke-table>
@@ -38,7 +40,7 @@
 				</thead>
 				<tbody>
 					<tr v-for="pokemon in filteredPokemon">
-						<td v-for="key in columns" v-on:click="chartMe(calcHP(pokemon['hp'], 1, 0, 0), calcStat(pokemon['atk'], 1, 0, 0), calcStat(pokemon['def'], 1, 0, 0), calcStat(pokemon['spatk'], 1, 0, 0), calcStat(pokemon['spdef'], 1, 0, 0), calcStat(pokemon['spe'], 1, 0, 0))">
+						<td v-for="key in columns" v-on:click="chartMe(pokemon['name'], calcStat(pokemon, 1, 0, 0))">
 							<span v-bind:class="[{'typeStructure' : classChecker(key)}, key == 'type1' ? pokemon.type1.toLowerCase() : '', key == 'type2' ? pokemon.type2.toLowerCase() : '' ]">{{ pokemon[key] }}</span>
 						</td>
 					</tr>

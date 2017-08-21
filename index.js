@@ -13,6 +13,10 @@
 	using sortTable() method.
 */
 
+//GLOBAL VARIABLES
+var myRadarChart;
+var pokenDex;
+
 var pokeTable = {
 	template: '#poke-table',
 	props: {
@@ -77,25 +81,33 @@ var pokeTable = {
 	},
 
 	methods: {
+		/*
+			classChecker is a function that returns true if the parameter key
+			is the string type1 or type2. This is used to add the typeStructure
+			class.
+		*/
+
 		"classChecker": function(key) {
 			return key == 'type1' || key == 'type2'
 		},
 
-		"chartMe": function (hp, atk, def, spe, spdef, spatk) {
-			this.hp = hp
-			this.atk = atk
-			this.def = def
-			this.spatk = spatk
-			this.spdef = spdef
-			this.spe = spe
+		"chartMe": function (pokemonName, pokemonInfo) {
+			this.hp = pokemonInfo[0]
+			this.atk = pokemonInfo[1]
+			this.def = pokemonInfo[2]
+			this.spatk = pokemonInfo[3]
+			this.spdef = pokemonInfo[4]
+			this.spe = pokemonInfo[5]
 
 			document.getElementById("asdfg").classList.add("is-active");
+
+			// Chart.defaults.global.tooltips.enabled = false;
 
 			var ctx = document.getElementById("myChart").getContext('2d');
 			ctx.canvas.width = 100;
 			ctx.canvas.height = 100;
 
-			var myRadarChart = new Chart(ctx, {
+			myRadarChart = new Chart(ctx, {
 			    type: 'radar',
 			    data: {
 			    	labels: ["Hit Point", "Attack", "Defense", "Speed", "Special Defense", "Special Attack"],
@@ -112,24 +124,50 @@ var pokeTable = {
 			    	}]
 			    },
 			    options: {
-				scale: {
-		              ticks: {
-		                beginAtZero: true
-		              }
+			    	pointDot: false,
+					pointLabelFontSize: 20,
+			    	title: {
+			            display: true,
+			            text: pokemonName,
+			            fontSize: 20
+			        },
+			    	legend: {
+			    		display: true
+			    	},
+			    	animation: {
+			            onProgress: function(animation) {
+			                myRadarChart.value = animation.animationObject.currentStep / animation.animationObject.numSteps;
+			            }
+			        },
+					scale: {
+			              ticks: {
+			                beginAtZero: true
+			              },
+			              pointLabels: {
+				            fontSize: 16
+				          }
 		            }
 			    }
 			});
 		},
 
-		"calcHP": function(base, level, iv, ev) {
-			var hp = Math.floor( ( ( 2 * base + iv + Math.floor(ev/4) ) * level )/100 ) + level + 10;
-			return hp
-		},
-
 		// Need to rewrite it where the nature is a modifier of 1.1, 1.0 or 0.9
 		"calcStat": function(base, level, iv, ev) {
+			pokenDex = base['nDex'] - 1;
+			var baseHp = base['hp'];
+			var baseAtk = base['atk'];
+			var baseDef = base['def'];
+			var baseSpAtk = base['spatk'];
+			var baseSpDef = base['spdef'];
+			var baseSpe = base['spe'];
 			var nature = 1;
-			return Math.floor( ( ( Math.floor( ( 2 * base + iv + Math.floor(ev/4) ) * level )/100 ) + 5 ) * nature )
+			var newHp = (Math.floor( ( ( 2 * baseHp + iv + Math.floor(ev/4) ) * level )/100 ) + level + 10)
+			var newAtk = Math.floor( ( ( Math.floor( ( 2 * baseAtk + iv + Math.floor(ev/4) ) * level )/100 ) + 5 ) * nature )
+			var newDef = Math.floor( ( ( Math.floor( ( 2 * baseDef + iv + Math.floor(ev/4) ) * level )/100 ) + 5 ) * nature )
+			var newSpAtk = Math.floor( ( ( Math.floor( ( 2 * baseSpAtk + iv + Math.floor(ev/4) ) * level )/100 ) + 5 ) * nature )
+			var newSpDef = Math.floor( ( ( Math.floor( ( 2 * baseSpDef + iv + Math.floor(ev/4) ) * level )/100 ) + 5 ) * nature )
+			var newSpe = Math.floor( ( ( Math.floor( ( 2 * baseSpe + iv + Math.floor(ev/4) ) * level )/100 ) + 5 ) * nature )
+			return [newHp, newAtk, newDef, newSpAtk, newSpDef, newSpe]
 		},
 
 		// sortTable which takes in a parameter called column. This function sorts in ascending or descending order.
@@ -145,6 +183,7 @@ Vue.component('poke-table', pokeTable);
 var pokedex = new Vue({
 	el: '#pokedex',
 	data: {
+		desiredlevel: 1,
 		hp: 0,
 		atk: 0,
 		def: 0,
@@ -311,17 +350,19 @@ var pokedex = new Vue({
 	methods: {
 		"unChartMe": function() {
 			document.getElementById("asdfg").classList.remove("is-active");
-			this.hp = 0
-			this.atk = 0
-			this.def = 0
-			this.spatk = 0
-			this.spdef = 0
-			this.spe = 0
+			myRadarChart.destroy();
 		},
 
 		// Currently not working; need to fix
-		"addData": function(something) {
-			myRadarChart.data.datasets[0].data[3] = something.value;
+		"addData": function(something, level) {
+			this.desiredlevel = parseInt(document.getElementById("desiredlevel").value);
+			var base = pokeTable.methods.calcStat(something, this.desiredlevel, 0, 0);
+			myRadarChart.data.datasets[0].data[0] = base[0];
+			myRadarChart.data.datasets[0].data[1] = base[1];
+			myRadarChart.data.datasets[0].data[2] = base[2];
+			myRadarChart.data.datasets[0].data[3] = base[3];
+			myRadarChart.data.datasets[0].data[4] = base[4];
+			myRadarChart.data.datasets[0].data[5] = base[5];
 			myRadarChart.update();
 		}
 

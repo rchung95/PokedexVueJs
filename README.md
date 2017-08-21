@@ -19,6 +19,9 @@ To learn a new JS language alongside another frontend framework similar to Boots
 - ~~Analytical graph?~~ Potentially D3.js to showcase its 6 stats and/or IV/EV
 - ~~Rewrite js part so it aligns with vue.js code~~
 - ~~Build a web scraper~~
+- Rewrite Chart js part, so it is more reuseable?
+- Add in pokemon image
+- Add in the web scraping code
 
 Will add more if I can think of anything.
 
@@ -73,8 +76,13 @@ var pokeTable = {
 Vue.component('poke-table', pokeTable);
 ```
 
+3. Easily forgotten mistake
+
+Within the input field, I can enter a number and it would be used to calculate the pokemon's stats. However one problem I faced is when I wanted to change the level of the pokemon... let's say from 1 to 100, my HP stat would skyrocket to the 10000s. After about 10 minutes of checking out my JS code, I realized that I made a very forgetful and common mistake. I thought that the number I input would be of type ```Int```, however it is actually of type ```String```. I fixed this by surround the value with ```parseInt()``` to make it of type ```Int```.
+
 ## Bugs that needs to be fix
-- When opening up the modal. The initial value is set to the previous stats of another Pokemon when hovering closely
+- ~~When opening up the modal. The initial value is set to the previous stats of another Pokemon when hovering closely~~
+  - Fixed using variableOfChart.destroy();
 
 ## Resources I used to learn
 - [Grid Component](https://vuejs.org/v2/examples/grid-component.html)
