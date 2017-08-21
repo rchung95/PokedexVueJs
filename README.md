@@ -85,6 +85,7 @@ Within the input field, I can enter a number and it would be used to calculate t
   - Fixed using variableOfChart.destroy();
 
 ## Resources I used to learn
+- [Stat Formulas](https://bulbapedia.bulbagarden.net/wiki/Statistic#In-battle_modification)
 - [Grid Component](https://vuejs.org/v2/examples/grid-component.html)
 - [x-template issue](https://github.com/vuejs/vue/issues/4276)
 - [Web Scraper tutorial](https://first-web-scraper.readthedocs.io/en/latest/#act-3-web-scraping)
