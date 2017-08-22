@@ -15,7 +15,7 @@ To learn a new JS language alongside another frontend framework similar to Boots
   - ~~Custom clases~~
 - Use node.js to make it fully a web application and connect it to potentially a database
   - Lots of npm modules for Vue.js
-- IV/EV values
+- ~~ Levels, IV~~/EV values
 - ~~Analytical graph?~~ Potentially D3.js to showcase its 6 stats and/or IV/EV
 - ~~Rewrite js part so it aligns with vue.js code~~
 - ~~Build a web scraper~~

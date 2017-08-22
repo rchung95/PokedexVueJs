@@ -11,7 +11,14 @@
 				<div class="modal-background"></div>
 				<div class="modal-content">
 					<canvas id="myChart" class="box" width="100px" height="100px"></canvas>
-					<input id="desiredlevel" name="level" value="1">
+					<input type="number" id="desiredlevel" name="level" value="1" min="1" max="100">
+					<input type="number" id="ivHp" name="ivHp" value=0 min="0" max="31">
+					<input type="number" id="ivAtk" name="ivAtk" value=0 min="0" max="31">
+					<input type="number" id="ivDef" name="ivDef" value=0 min="0" max="31">
+					<input type="number" id="ivSpAtk" name="ivSpAtk" value=0 min="0" max="31">
+					<input type="number" id="ivSpDef" name="ivSpDef" value=0 min="0" max="31">
+					<input type="number" id="ivSpe" name="ivSpe" value=0>
+					<input type="number" id="aaa" readonly="true">
 					<button v-on:click="addData(this.pokedex.pokemonList[this.pokenDex])">Update</button>
 				</div>
 				<button class="modal-close is-large" v-on:click="unChartMe()" aria-label="close"></button>
@@ -40,7 +47,7 @@
 				</thead>
 				<tbody>
 					<tr v-for="pokemon in filteredPokemon">
-						<td v-for="key in columns" v-on:click="chartMe(pokemon['name'], calcStat(pokemon, 1, 0, 0))">
+						<td v-for="key in columns" v-on:click="chartMe(pokemon['name'], calcStat(pokemon, 1, [0, 0, 0, 0, 0, 0], 0))">
 							<span v-bind:class="[{'typeStructure' : classChecker(key)}, key == 'type1' ? pokemon.type1.toLowerCase() : '', key == 'type2' ? pokemon.type2.toLowerCase() : '' ]">{{ pokemon[key] }}</span>
 						</td>
 					</tr>
