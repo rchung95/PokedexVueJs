@@ -11,16 +11,16 @@ To learn a new JS language alongside another frontend framework similar to Boots
 - ~~Change type to type 1 and type 2 as some pokemon like Bulbasaur has multiple types~~
 - ~~Add in the rest of the pokemon~~
 - Stylize it
-  - Bulma (potentially remove it in favour of custom classes)
+  - ~~Bulma (potentially remove it in favour of custom classes)~~
   - ~~Custom clases~~
 - Use node.js to make it fully a web application and connect it to potentially a database
   - Lots of npm modules for Vue.js
-- ~~ Levels, IV~~/EV values
-- ~~Analytical graph?~~ Potentially D3.js to showcase its 6 stats and/or IV/EV
+- ~~Levels, IV/EV values~~
+- ~~Analytical graph? Potentially D3.js to showcase its 6 stats and/or IV/EV~~
 - ~~Rewrite js part so it aligns with vue.js code~~
 - ~~Build a web scraper~~
-- Rewrite Chart js part, so it is more reuseable?
-- Add in pokemon image
+- ~~Rewrite Chart js part, so it is more reuseable?~~
+- ~~Add in pokemon image~~
 - Add in the web scraping code
 
 Will add more if I can think of anything.

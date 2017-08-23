@@ -8,18 +8,79 @@
 	<body>
 		<div id="pokedex">
 			<div id="asdfg" class="modal">
-				<div class="modal-background"></div>
-				<div class="modal-content">
-					<canvas id="myChart" class="box" width="100px" height="100px"></canvas>
-					<input type="number" id="desiredlevel" name="level" value="1" min="1" max="100">
-					<input type="number" id="ivHp" name="ivHp" value=0 min="0" max="31">
-					<input type="number" id="ivAtk" name="ivAtk" value=0 min="0" max="31">
-					<input type="number" id="ivDef" name="ivDef" value=0 min="0" max="31">
-					<input type="number" id="ivSpAtk" name="ivSpAtk" value=0 min="0" max="31">
-					<input type="number" id="ivSpDef" name="ivSpDef" value=0 min="0" max="31">
-					<input type="number" id="ivSpe" name="ivSpe" value=0>
-					<input type="number" id="aaa" readonly="true">
-					<button v-on:click="addData(this.pokedex.pokemonList[this.pokenDex])">Update</button>
+				<div class="modal-background">
+					<div class="box">
+						<div class="columns has-text-centered">
+							<div class="column is-3 is-offset-1">
+								<img id="fff" class="image" style="max-width: 140px; height: auto;">
+								<div class="column">
+									<div class="columns">
+										<div class="column">
+											Level: <input type="number" id="desiredlevel" class="input" name="level" value="1" min="1" max="100">
+										</div>
+									</div>
+									<div class="columns">
+										<div class="column">
+											<p><b>IV Modifier (Max. 31)</b></p>
+										</div>
+									</div>
+									<div class="columns">
+										<div class="column is-one-third is-mobile">
+											HP: <input type="number" id="ivHp" class="input" name="ivHp" value=0 min="0" max="31">
+										</div>
+										<div class="column is-one-third is-mobile">
+											ATK: <input type="number" id="ivAtk" class="input" name="ivAtk" value=0 min="0" max="31">
+										</div>
+										<div class="column is-one-third is-mobile">
+											DEF: <input type="number" id="ivDef" class="input" name="ivDef" value=0 min="0" max="31">
+										</div>
+									</div>
+									<div class="columns">
+										<div class="column is-one-third is-mobile">
+											SP.ATK: <input type="number" id="ivSpAtk" class="input" name="ivSpAtk" value=0 min="0" max="31">
+										</div>
+										<div class="column is-one-third is-mobile">
+											SP.DEF: <input type="number" id="ivSpDef" class="input" name="ivSpDef" value=0 min="0" max="31">
+										</div>
+										<div class="column is-one-third is-mobile">
+											SPE: <input type="number" id="ivSpe" class="input" name="ivSpe" value=0 min="0" max="31">
+										</div>
+									</div>
+									<div class="columns">
+										<div class="column">
+											<p><b>EV Modifier (Total 510, Max. 252)</b></p>
+										</div>
+									</div>
+									<div class="columns">
+										<div class="column is-one-third is-mobile">
+											HP: <input type="number" id="evHp" class="input" name="evHp" value=0 min="0" max="252">
+										</div>
+										<div class="column is-one-third is-mobile">
+											ATK: <input type="number" id="evAtk" class="input" name="evAtk" value=0 min="0" max="252">
+										</div>
+										<div class="column is-one-third is-mobile">
+											DEF: <input type="number" id="evDef" class="input" name="evDef" value=0 min="0" max="252">
+										</div>
+									</div>
+									<div class="columns">
+										<div class="column is-one-third is-mobile">
+											SP.ATK: <input type="number" id="evSpAtk" class="input" name="evSpAtk" value=0 min="0" max="252">
+										</div>
+										<div class="column is-one-third is-mobile">
+											SP.DEF: <input type="number" id="evSpDef" class="input" name="evSpDef" value=0 min="0" max="252">
+										</div>
+										<div class="column is-one-third is-mobile">
+											SPE: <input type="number" id="evSpe" class="input" name="evSpe" value=0 min="0" max="252">
+										</div>
+									</div>
+								</div>
+								<button class="button" v-on:click="addData(this.pokedex.pokemonList[this.pokenDex])">Update</button>
+							</div>
+							<div class="column">
+								<canvas id="myChart" width="600" height="600"></canvas>
+							</div>
+						</div>
+					</div>
 				</div>
 				<button class="modal-close is-large" v-on:click="unChartMe()" aria-label="close"></button>
 			</div>
@@ -47,7 +108,7 @@
 				</thead>
 				<tbody>
 					<tr v-for="pokemon in filteredPokemon">
-						<td v-for="key in columns" v-on:click="chartMe(pokemon['name'], calcStat(pokemon, 1, [0, 0, 0, 0, 0, 0], 0))">
+						<td v-for="key in columns" v-on:click="chartMe(pokemon, calcStat(pokemon, 1, [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]))">
 							<span v-bind:class="[{'typeStructure' : classChecker(key)}, key == 'type1' ? pokemon.type1.toLowerCase() : '', key == 'type2' ? pokemon.type2.toLowerCase() : '' ]">{{ pokemon[key] }}</span>
 						</td>
 					</tr>
