@@ -115,7 +115,7 @@ var pokeTable = {
 			myRadarChart = new Chart(ctx, {
 			    type: 'radar',
 			    data: {
-			    	labels: ["Hit Point", "Attack", "Defense", "Speed", "Special Defense", "Special Attack"],
+			    	labels: ["Hit Point " + pokemonInfo['0'].toString(), "Attack " + pokemonInfo['1'].toString(), "Defense " + pokemonInfo['2'].toString(), "Speed " + pokemonInfo['5'].toString(), "Special Defense " + pokemonInfo['4'].toString(), "Special Attack " + pokemonInfo['3'].toString()],
 			    	datasets: [{
 			    		label: 'Original Stats',
 						data: pokemonInfo,
@@ -184,6 +184,7 @@ var pokedex = new Vue({
 	el: '#pokedex',
 	data: {
 		desiredlevel: 1,
+		check: true,
 		iv: 0,
 		ev: 0,
 		searchQuery: '',
@@ -346,28 +347,90 @@ var pokedex = new Vue({
 	methods: {
 		"unChartMe": function() {
 			document.getElementById("asdfg").classList.remove("is-active");
+			document.getElementById("desiredlevel").value = 1;
+			document.getElementById("ivHp").value = 0;
+			document.getElementById("ivAtk").value = 0;
+			document.getElementById("ivDef").value = 0;
+			document.getElementById("ivSpAtk").value = 0;
+			document.getElementById("ivSpDef").value = 0;
+			document.getElementById("ivSpe").value = 0;
+			document.getElementById("evHp").value = 0;
+			document.getElementById("evAtk").value = 0;
+			document.getElementById("evDef").value = 0;
+			document.getElementById("evSpAtk").value = 0;
+			document.getElementById("evSpDef").value = 0;
+			document.getElementById("evSpe").value = 0;
 			myRadarChart.destroy();
 		},
 
+		"checkIV": function(iv) {
+			var ivList = ["ivHp", "ivAtk", "ivDef", "ivSpAtk", "ivSpDef", "ivSpe"];
+			for (i=0; i < iv.length; i++) {
+				if (this.iv[i] > 31 || this.iv[i] < 0) {
+					document.getElementById(ivList[i]).classList.add("is-danger");
+					this.check = false;
+				} else {
+					document.getElementById(ivList[i]).classList.remove("is-danger");
+				}
+			}
+		},
+
+		"checkEV": function(ev) {
+			if (this.ev[0] > 252 || this.ev[1] > 252 || this.ev[2] > 252 || this.ev[3] > 252 || this.ev[4] > 252 || this.ev[5] > 252 || this.ev[0] < 0 || this.ev[1] < 0 || this.ev[2] < 0 || this.ev[3] < 0 || this.ev[4] < 0 || this.ev[5] < 0 || (this.ev[0] + this.ev[1] + this.ev[2] + this.ev[3] + this.ev[4] + this.ev[5]) > 510 || (this.ev[0] + this.ev[1] + this.ev[2] + this.ev[3] + this.ev[4] + this.ev[5]) < 0) {
+				document.getElementById("evHp").classList.add("is-danger");
+				document.getElementById("evAtk").classList.add("is-danger");
+				document.getElementById("evDef").classList.add("is-danger");
+				document.getElementById("evSpAtk").classList.add("is-danger");
+				document.getElementById("evSpDef").classList.add("is-danger");
+				document.getElementById("evSpe").classList.add("is-danger");
+				this.check = false;
+
+			} else {
+				document.getElementById("evHp").classList.remove("is-danger");
+				document.getElementById("evAtk").classList.remove("is-danger");
+				document.getElementById("evDef").classList.remove("is-danger");
+				document.getElementById("evSpAtk").classList.remove("is-danger");
+				document.getElementById("evSpDef").classList.remove("is-danger");
+				document.getElementById("evSpe").classList.remove("is-danger");
+			}
+		},
+
+		// Need to refactor this code and its helper function better
 		"addData": function(something, level) {
+			this.check = true;
 			this.desiredlevel = parseInt(document.getElementById("desiredlevel").value);
 			this.iv = [parseInt(document.getElementById("ivHp").value), parseInt(document.getElementById("ivAtk").value), parseInt(document.getElementById("ivDef").value), parseInt(document.getElementById("ivSpAtk").value), parseInt(document.getElementById("ivSpDef").value), parseInt(document.getElementById("ivSpe").value)];
 			this.ev = [parseInt(document.getElementById("evHp").value), parseInt(document.getElementById("evAtk").value), parseInt(document.getElementById("evDef").value), parseInt(document.getElementById("evSpAtk").value), parseInt(document.getElementById("evSpDef").value), parseInt(document.getElementById("evSpe").value)];
-			var base2 = pokeTable.methods.calcStat(something, this.desiredlevel, this.iv, this.ev);
-			var base = pokeTable.methods.calcStat(something, this.desiredlevel, [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]);
-
-			myRadarChart.data.datasets[0].data = base;
-			if (base[0] != base2[0] | base[1] != base2[1] | base[2] != base2[2] | base[3] != base2[3] | base[4] != base2[4] | base[5] != base2[5]) {
-				if (myRadarChart.data.datasets.length < 2) {
-					myRadarChart.data.datasets.push(stat2);
-				}
-				myRadarChart.data.datasets[1].data = base2;
-
-				myRadarChart.data.datasets[1].hidden = false;
-				myRadarChart.data.datasets[1].fill = '-1';
-				myRadarChart.data.labels = ["Hitpoint " + base['0'].toString() + " / " + base2['0'].toString(), "Attack " + base['1'].toString() + " / " + base2['1'].toString(), "Defense " + base['2'].toString() + " / " + base2['2'].toString(), "Speed " + base['5'].toString() + " / " + base2['5'].toString(), "Special Defense " + base['4'].toString() + " / " + base2['4'].toString(), "Special Attack " + base['3'].toString() + " / " + base2['3'].toString()];
+			
+			if (this.desiredlevel > 100 || this.desiredlevel < 1) {
+				document.getElementById("desiredlevel").classList.add("is-danger");
+				this.check = (this.check == true) ? false : true;
+			} else {
+				document.getElementById("desiredlevel").classList.remove("is-danger");
 			}
-			myRadarChart.update();
+
+			this.checkEV(this.ev);
+			this.checkIV(this.iv);
+
+			if (this.check) {
+				var base2 = pokeTable.methods.calcStat(something, this.desiredlevel, this.iv, this.ev);
+				var base = pokeTable.methods.calcStat(something, this.desiredlevel, [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]);
+
+				myRadarChart.data.datasets[0].data = base;
+
+				if (base[0] != base2[0] | base[1] != base2[1] | base[2] != base2[2] | base[3] != base2[3] | base[4] != base2[4] | base[5] != base2[5]) {
+					if (myRadarChart.data.datasets.length < 2) {
+						myRadarChart.data.datasets.push(stat2);
+					}
+					myRadarChart.data.datasets[1].data = base2;
+
+					myRadarChart.data.datasets[1].hidden = false;
+					myRadarChart.data.datasets[1].fill = '-1';
+					myRadarChart.data.labels = ["Hitpoint " + base['0'].toString() + " | " + base2['0'].toString(), "Attack " + base['1'].toString() + " | " + base2['1'].toString(), "Defense " + base['2'].toString() + " | " + base2['2'].toString(), "Speed " + base['5'].toString() + " | " + base2['5'].toString(), "Special Defense " + base['4'].toString() + " | " + base2['4'].toString(), "Special Attack " + base['3'].toString() + " | " + base2['3'].toString()];
+				}
+				myRadarChart.update();
+
+			}
 		}
 
 	}
