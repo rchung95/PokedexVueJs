@@ -21,6 +21,7 @@ To learn a new JS language alongside another frontend framework similar to Boots
 - ~~Build a web scraper~~
 - ~~Rewrite Chart js part, so it is more reuseable?~~
 - ~~Add in pokemon image~~
+- Scape more for stats like legendary, has mega, tier list, generation etc.
 - Add in the web scraping code
 
 Will add more if I can think of anything.

@@ -75,11 +75,16 @@
 .normal {
 	background-color: #A7A879;
 }
-.box {
+
+.modal-content {
+	background-color: #fff;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+	width: 100vw;
 	height: 100vh;
-	border-radius: 0;
+	padding: 1vw 3vw 1vw 3vw;
 }
 
 .modal-close {
 	background-color: rgba(10, 10, 10, 0.4);
 }
+
