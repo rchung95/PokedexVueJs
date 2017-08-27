@@ -118,7 +118,7 @@ var pokeTable = {
 			    	labels: ["Hit Point " + pokemonInfo['0'].toString(), "Attack " + pokemonInfo['1'].toString(), "Defense " + pokemonInfo['2'].toString(), "Speed " + pokemonInfo['5'].toString(), "Special Defense " + pokemonInfo['4'].toString(), "Special Attack " + pokemonInfo['3'].toString()],
 			    	datasets: [{
 			    		label: 'Original Stats',
-						data: pokemonInfo,
+						data: [pokemonInfo[0], pokemonInfo[1], pokemonInfo[2], pokemonInfo[5], pokemonInfo[4], pokemonInfo[3]],
 						backgroundColor: 'rgba(5, 98, 191, 0.3)',
 					    borderColor: 'rgba(4, 80, 156, 0)',
 					    // borderWidth: 2,
@@ -422,7 +422,7 @@ var pokedex = new Vue({
 					if (myRadarChart.data.datasets.length < 2) {
 						myRadarChart.data.datasets.push(stat2);
 					}
-					myRadarChart.data.datasets[1].data = base2;
+					myRadarChart.data.datasets[1].data = [base2[0], base2[1], base2[2], base2[5], base2[4], base2[3]];
 
 					myRadarChart.data.datasets[1].hidden = false;
 					myRadarChart.data.datasets[1].fill = '-1';

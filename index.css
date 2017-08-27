@@ -80,7 +80,7 @@
 	background-color: #fff;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
 	width: 100vw;
-	height: 100vh;
+	max-height: 100vh;
 	padding: 1vw 3vw 1vw 3vw;
 }
 
