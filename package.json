@@ -1,0 +1,32 @@
+{
+  "name": "pokedexvuejs",
+  "version": "1.0.0",
+  "description": "A pokedex containing 151 pokemons with plans for expansion",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rchung95/PokedexVueJs.git"
+  },
+  "keywords": [
+    "pokemon",
+    "vue.js",
+    "web",
+    "app"
+  ],
+  "author": "Raymond Chung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rchung95/PokedexVueJs/issues"
+  },
+  "homepage": "https://github.com/rchung95/PokedexVueJs#readme",
+  "dependencies": {
+    "bulma": "^0.5.1",
+    "chart.js": "^2.6.0",
+    "express": "^4.15.4",
+    "vue-chartjs": "^2.8.2",
+    "vue.js": "^0.3.2"
+  }
+}
