@@ -11,74 +11,100 @@
 				<div class="modal-background">
 					<div class="modal-content">
 						<div class="columns has-text-centered">
-							<div class="column is-3 is-offset-1">
-								<img id="fff" class="image" style="max-width: 140px; height: auto;">
-								<div class="column">
-									<div class="columns">
-										<div class="column">
-											Level: <input type="number" id="desiredlevel" class="input" name="level" value="1" min="1" max="100">
-										</div>
+							<div class="column is-half">
+								<div class="columns">
+									<div class="column is-3">
+										<img id="fff" class="image" style="max-width: 120px; height: auto;">
 									</div>
-									<div class="columns">
-										<div class="column">
-											<p><b>IV Modifier (Max. 31)</b></p>
-										</div>
+									<div class="column is-2">
+										<p>Level: <input type="number" id="desiredlevel" class="input" name="level" value="1" min="1" max="100"></p>
 									</div>
-									<div class="columns">
-										<div class="column is-one-third is-mobile">
-											HP: <input type="number" id="ivHp" class="input" name="ivHp" value=0 min="0" max="31">
-										</div>
-										<div class="column is-one-third is-mobile">
-											ATK: <input type="number" id="ivAtk" class="input" name="ivAtk" value=0 min="0" max="31">
-										</div>
-										<div class="column is-one-third is-mobile">
-											DEF: <input type="number" id="ivDef" class="input" name="ivDef" value=0 min="0" max="31">
-										</div>
-									</div>
-									<div class="columns">
-										<div class="column is-one-third is-mobile">
-											SP.ATK: <input type="number" id="ivSpAtk" class="input" name="ivSpAtk" value=0 min="0" max="31">
-										</div>
-										<div class="column is-one-third is-mobile">
-											SP.DEF: <input type="number" id="ivSpDef" class="input" name="ivSpDef" value=0 min="0" max="31">
-										</div>
-										<div class="column is-one-third is-mobile">
-											SPE: <input type="number" id="ivSpe" class="input" name="ivSpe" value=0 min="0" max="31">
-										</div>
-									</div>
-									<div class="columns">
-										<div class="column">
-											<p><b>EV Modifier (Total 510, Max. 252)</b></p>
-										</div>
-									</div>
-									<div class="columns">
-										<div class="column is-one-third is-mobile">
-											HP: <input type="number" id="evHp" class="input" name="evHp" value=0 min="0" max="252">
-										</div>
-										<div class="column is-one-third is-mobile">
-											ATK: <input type="number" id="evAtk" class="input" name="evAtk" value=0 min="0" max="252">
-										</div>
-										<div class="column is-one-third is-mobile">
-											DEF: <input type="number" id="evDef" class="input" name="evDef" value=0 min="0" max="252">
-										</div>
-									</div>
-									<div class="columns">
-										<div class="column is-one-third is-mobile">
-											SP.ATK: <input type="number" id="evSpAtk" class="input" name="evSpAtk" value=0 min="0" max="252">
-										</div>
-										<div class="column is-one-third is-mobile">
-											SP.DEF: <input type="number" id="evSpDef" class="input" name="evSpDef" value=0 min="0" max="252">
-										</div>
-										<div class="column is-one-third is-mobile">
-											SPE: <input type="number" id="evSpe" class="input" name="evSpe" value=0 min="0" max="252">
-										</div>
+									<div class="column is-3">
+										<select v-model="selected" class="select">
+											<option v-for="option in options" v-bind:value="[option.str, option.weakness]">
+												{{ option.nature }}
+											</option>
+										</select>
+										<p>Strength: {{ selected[0] }} Weakness: {{ selected[1] }}</p>
 									</div>
 								</div>
-								<button class="button" v-on:click="addData(this.pokedex.pokemonList[this.pokenDex])">Update</button>
+
+								<div class="columns">
+									<div class="column">
+										<p><b>IV Modifier (Max. 31)</b></p>
+									</div>
+								</div>
+
+								<div class="columns">
+									<div class="column is-2">
+										<p>HP: <input type="number" id="ivHp" class="input" name="ivHp" value=0 min="0" max="31"></p>
+									</div>
+
+									<div class="column is-2">
+										<p>Atk: <input type="number" id="ivAtk" class="input" name="ivAtk" value=0 min="0" max="31"></p>
+									</div>
+
+									<div class="column is-2">
+										<p>Def: <input type="number" id="ivDef" class="input" name="ivDef" value=0 min="0" max="31"></p>
+									</div>
+
+									<div class="column is-2">
+										<p>Sp.Atk: <input type="number" id="ivSpAtk" class="input" name="ivSpAtk" value=0 min="0" max="31"></p>
+									</div>
+
+									<div class="column is-2">
+										<p>Sp.Def: <input type="number" id="ivSpDef" class="input" name="ivSpDef" value=0 min="0" max="31"></p>
+									</div>
+
+									<div class="column is-2">
+										<p>Spe: <input type="number" id="ivSpe" class="input" name="ivSpe" value=0 min="0" max="31"></p>
+									</div>
+								</div>
+
+								<div class="columns">
+									<div class="column">
+										<p><b>EV Modifier (Max. 252 for 2 stats and 510 in total)</b></p>
+									</div>
+								</div>
+
+								<div class="columns">
+									<div class="column is-2">
+										<p>HP: <input type="number" id="evHp" class="input" name="evHp" value=0 min="0" max="252"></p>
+									</div>
+
+									<div class="column is-2">
+										<p>Atk: <input type="number" id="evAtk" class="input" name="evAtk" value=0 min="0" max="252"></p>
+									</div>
+
+									<div class="column is-2">
+										<p>Def: <input type="number" id="evDef" class="input" name="evDef" value=0 min="0" max="252"></p>
+									</div>
+
+									<div class="column is-2">
+										<p>Sp.Atk: <input type="number" id="evSpAtk" class="input" name="evSpAtk" value=0 min="0" max="252"></p>
+									</div>
+
+									<div class="column is-2">
+										<p>Sp.Def: <input type="number" id="evSpDef" class="input" name="evSpDef" value=0 min="0" max="252"></p>
+									</div>
+
+									<div class="column is-2">
+										<p>Spe: <input type="number" id="evSpe" class="input" name="evSpe" value=0 min="0" max="252"></p>
+									</div>
+								</div>
+
+								<div class="columns">
+									<div class="column is-2">
+										<button class="button" v-on:click="addData(this.pokedex.pokemonList[this.pokenDex])">Update</button>
+									</div>
+								</div>
+
 							</div>
+
 							<div class="column">
 								<canvas id="myChart" width="500" height="500"></canvas>
 							</div>
+
 						</div>
 					</div>
 				</div>
@@ -96,7 +122,6 @@
 
 		<script src="/scripts/vue.min.js"></script>
 		<script src="/scripts/Chart.min.js"></script>
-<!-- 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script> -->
 
 		<script type="text/x-template" id="poke-table">
 			<table class="table is-striped is-fullwidth">
@@ -109,7 +134,7 @@
 				</thead>
 				<tbody>
 					<tr v-for="pokemon in filteredPokemon">
-						<td v-for="key in columns" v-on:click="chartMe(pokemon, calcStat(pokemon, 1, [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]))">
+						<td v-for="key in columns" v-on:click="chartMe(pokemon, calcStat(pokemon, 1, [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [1, 1]))">
 							<span v-bind:class="[{'typeStructure' : classChecker(key)}, key == 'type1' ? pokemon.type1.toLowerCase() : '', key == 'type2' ? pokemon.type2.toLowerCase() : '' ]">{{ pokemon[key] }}</span>
 						</td>
 					</tr>

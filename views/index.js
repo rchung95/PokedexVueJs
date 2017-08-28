@@ -108,14 +108,16 @@ var pokeTable = {
 			document.getElementById("fff").src = pokemon.image;
 			document.getElementById("asdfg").classList.add("is-active");
 			Chart.defaults.global.tooltips.enabled = false;
-			Chart.defaults.global.responsive = true;
-			Chart.defaults.global.maintainAspectRatio = false;
+			Chart.defaults.global.responsive = false;
+			Chart.defaults.global.maintainAspectRatio = true;
 			var ctx = document.getElementById("myChart").getContext('2d');
 
 			myRadarChart = new Chart(ctx, {
 			    type: 'radar',
+			    responsive: true,
+			    maintainAspectRatio: false,
 			    data: {
-			    	labels: ["Hit Point " + pokemonInfo['0'].toString(), "Attack " + pokemonInfo['1'].toString(), "Defense " + pokemonInfo['2'].toString(), "Speed " + pokemonInfo['5'].toString(), "Special Defense " + pokemonInfo['4'].toString(), "Special Attack " + pokemonInfo['3'].toString()],
+			    	labels: ["Hp " + pokemonInfo['0'].toString(), "Atk " + pokemonInfo['1'].toString(), "Def " + pokemonInfo['2'].toString(), "Spe " + pokemonInfo['5'].toString(), "Sp.Def " + pokemonInfo['4'].toString(), "Sp.Atk " + pokemonInfo['3'].toString()],
 			    	datasets: [{
 			    		label: 'Original Stats',
 						data: [pokemonInfo[0], pokemonInfo[1], pokemonInfo[2], pokemonInfo[5], pokemonInfo[4], pokemonInfo[3]],
@@ -158,15 +160,31 @@ var pokeTable = {
 		},
 
 		// Need to rewrite it where the nature is a modifier of 1.1, 1.0 or 0.9
-		"calcStat": function(base, level, iv, ev) {
+		"calcStat": function(base, level, iv, ev, nat) {
 			pokenDex = base['nDex'] - 1;
+			var ll = ['atk', 'def', 'sp.atk', 'sp.def', 'spe'];
 			var nature = 1;
+			var newAtk;
+			var newDef;
+			var newSpAtk;
+			var newSpDef;
+			var newSpe;
+
 			var newHp = (Math.floor( ( ( 2 * base['hp'] + iv[0] + Math.floor(ev[0]/4) ) * level )/100 ) + level + 10)
-			var newAtk = Math.floor( ( ( Math.floor( ( 2 * base['atk'] + iv[1] + Math.floor(ev[1]/4) ) * level )/100 ) + 5 ) * nature )
-			var newDef = Math.floor( ( ( Math.floor( ( 2 * base['def'] + iv[2] + Math.floor(ev[2]/4) ) * level )/100 ) + 5 ) * nature )
-			var newSpAtk = Math.floor( ( ( Math.floor( ( 2 * base['spatk'] + iv[3] + Math.floor(ev[3]/4) ) * level )/100 ) + 5 ) * nature )
-			var newSpDef = Math.floor( ( ( Math.floor( ( 2 * base['spdef'] + iv[4] + Math.floor(ev[4]/4) ) * level )/100 ) + 5 ) * nature )
-			var newSpe = Math.floor( ( ( Math.floor( ( 2 * base['spe'] + iv[5] + Math.floor(ev[5]/4) ) * level )/100 ) + 5 ) * nature )
+			for (var i=0; i < 5; i++) {
+				nature = (nat[0] == ll[i]) ? 1.1 : (nat[1] == ll[i]) ? 0.9 : 1
+				if (i == 0) {
+					newAtk = Math.floor( ( ( Math.floor( ( 2 * base['atk'] + iv[1] + Math.floor(ev[1]/4) ) * level )/100 ) + 5 ) * nature )
+				} else if (i == 1) {
+					newDef = Math.floor( ( ( Math.floor( ( 2 * base['def'] + iv[2] + Math.floor(ev[2]/4) ) * level )/100 ) + 5 ) * nature )
+				} else if (i == 2) {
+					newSpAtk = Math.floor( ( ( Math.floor( ( 2 * base['spatk'] + iv[3] + Math.floor(ev[3]/4) ) * level )/100 ) + 5 ) * nature )
+				} else if (i == 3) {
+					newSpDef = Math.floor( ( ( Math.floor( ( 2 * base['spdef'] + iv[4] + Math.floor(ev[4]/4) ) * level )/100 ) + 5 ) * nature )
+				} else if (i == 4) {
+					newSpe = Math.floor( ( ( Math.floor( ( 2 * base['spe'] + iv[5] + Math.floor(ev[5]/4) ) * level )/100 ) + 5 ) * nature )
+				}
+			}
 			return [newHp, newAtk, newDef, newSpAtk, newSpDef, newSpe]
 		},
 
@@ -188,6 +206,7 @@ var pokedex = new Vue({
 		iv: 0,
 		ev: 0,
 		searchQuery: '',
+		selected: ['atk', 'sp.atk'],
 		pokColumns: ['nDex', 'name', 'type1', 'type2'],
 		pokemonList: [
 			{ "nDex": 1, "name": "Bulbasaur", "type1": "Grass", "type2": "Poison", "hp": 45, "atk":  49, "def": 49, "spatk":  65, "spdef":  65, "spe": 45, "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" },
@@ -341,6 +360,34 @@ var pokedex = new Vue({
 			{ "nDex": 149, "name": "Dragonite", "type1": "Dragon", "type2": "Flying", "hp": 91, "atk":  134, "def": 95, "spatk":  100, "spdef":  100, "spe": 80, "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/149.png" },
 			{ "nDex": 150, "name": "Mewtwo", "type1": "Psychic", "type2": "", "hp": 106, "atk":  110, "def": 90, "spatk":  154, "spdef":  90, "spe": 130, "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png" },
 			{ "nDex": 151, "name": "Mew", "type1": "Psychic", "type2": "", "hp": 100, "atk":  100, "def": 100, "spatk":  100, "spdef":  100, "spe": 100, "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png" }
+		],
+
+		options: [
+			{ nature: 'Adamant', str: 'atk', weakness: 'sp.atk'},
+			{ nature: 'Brave', str: 'atk', weakness: 'spe'},
+			{ nature: 'Lonely', str: 'atk', weakness: 'def'},
+			{ nature: 'Naughty', str: 'atk', weakness: 'sp.def'},
+			{ nature: 'Bold', str: 'def', weakness: 'atk'},
+			{ nature: 'Relaxed', str: 'def', weakness: 'spe'},
+			{ nature: 'Impish', str: 'def', weakness: 'sp.atk'},
+			{ nature: 'Lax', str: 'def', weakness: 'sp.def'},
+			{ nature: 'Timid', str: 'spe', weakness: 'atk'},
+			{ nature: 'Hasty', str: 'spe', weakness: 'def'},
+			{ nature: 'Jolly', str: 'spe', weakness: 'sp.atk'},
+			{ nature: 'Naive', str: 'spe', weakness: 'sp.def'},
+			{ nature: 'Modest', str: 'sp.atk', weakness: 'atk'},
+			{ nature: 'Mild', str: 'sp.atk', weakness: 'def'},
+			{ nature: 'Quiet', str: 'sp.atk', weakness: 'spe'},
+			{ nature: 'Rash', str: 'sp.atk', weakness: 'sp.def'},
+			{ nature: 'Calm', str: 'sp.def', weakness: 'atk'},
+			{ nature: 'Gentle', str: 'sp.def', weakness: 'def'},
+			{ nature: 'Sassy', str: 'sp.def', weakness: 'spe'},
+			{ nature: 'Careful', str: 'sp.def', weakness: 'sp.atk'},
+			{ nature: 'Hardy', str: '', weakness: ''},
+			{ nature: 'Docile', str: '', weakness: ''},
+			{ nature: 'Serious', str: '', weakness: ''},
+			{ nature: 'Bashful', str: '', weakness: ''},
+			{ nature: 'Quirky', str: '', weakness: ''},
 		]
 	},
 
@@ -413,8 +460,8 @@ var pokedex = new Vue({
 			this.checkIV(this.iv);
 
 			if (this.check) {
-				var base2 = pokeTable.methods.calcStat(something, this.desiredlevel, this.iv, this.ev);
-				var base = pokeTable.methods.calcStat(something, this.desiredlevel, [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]);
+				var base2 = pokeTable.methods.calcStat(something, this.desiredlevel, this.iv, this.ev, this.selected);
+				var base = pokeTable.methods.calcStat(something, this.desiredlevel, [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], this.selected);
 
 				myRadarChart.data.datasets[0].data = base;
 
@@ -426,7 +473,9 @@ var pokedex = new Vue({
 
 					myRadarChart.data.datasets[1].hidden = false;
 					myRadarChart.data.datasets[1].fill = '-1';
-					myRadarChart.data.labels = ["Hitpoint " + base['0'].toString() + " | " + base2['0'].toString(), "Attack " + base['1'].toString() + " | " + base2['1'].toString(), "Defense " + base['2'].toString() + " | " + base2['2'].toString(), "Speed " + base['5'].toString() + " | " + base2['5'].toString(), "Special Defense " + base['4'].toString() + " | " + base2['4'].toString(), "Special Attack " + base['3'].toString() + " | " + base2['3'].toString()];
+					myRadarChart.data.labels = ["Hp " + base['0'] + " | " + base2['0'], "Atk " + base['1']+ " | " + base2['1'], "Def " + base['2'] + " | " + base2['2'], "Spe " + base['5'] + " | " + base2['5'], "Sp.Def " + base['4'] + " | " + base2['4'], "Sp.Atk " + base['3'] + " | " + base2['3']];
+				} else {
+					myRadarChart.data.labels = ["Hp " + base['0'], "Atk " + base['1'], "Def " + base['2'], "Spe " + base['5'], "Sp.Def " + base['4'], "Sp.Atk " + base['3']];
 				}
 				myRadarChart.update();
 
