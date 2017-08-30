@@ -21,14 +21,16 @@ To learn a new JS language alongside another frontend framework similar to Boots
 - ~~Build a web scraper~~
 - ~~Rewrite Chart js part, so it is more reuseable?~~
 - ~~Add in pokemon image~~
-- Scape more for stats like legendary, has mega, tier list, generation etc.
-- Add in the web scraping code
+- ~~Scrape more for stats like legendary, has mega, tier list, generation etc.~~
+- ~~Add in the web scraping code~~
+- Add in the CSVtoJSON code
 
 Will add more if I can think of anything.
 
 ## Languages/Framework used
 - Vue.js
 - Bulma
+- Python
 
 ## Challenges I faced
 1. Searching multiple categories
@@ -81,9 +83,27 @@ Vue.component('poke-table', pokeTable);
 
 Within the input field, I can enter a number and it would be used to calculate the pokemon's stats. However one problem I faced is when I wanted to change the level of the pokemon... let's say from 1 to 100, my HP stat would skyrocket to the 10000s. After about 10 minutes of checking out my JS code, I realized that I made a very forgetful and common mistake. I thought that the number I input would be of type ```Int```, however it is actually of type ```String```. I fixed this by surround the value with ```parseInt()``` to make it of type ```Int```.
 
+4. Finding websites to scrape
+
+One of the hugest issues I have when I am trying to scape for data is trying to find a perfect site with all of the stats I needed. I found three which are worthy, which are Bulbapedia, Serebii and Smogon. Bulbapedia was the easiest to scrape. If I was not using Bulbapedia I would had use Serebii. Smogon had all of the tier information which I needed, BUT it was a pain in the ass to scrape. I kind of wish there was already an API or another site that included tiers (AG, Uber, OU etc.) as part of their data.
+
+For the future, I plan on building a better scraper so I do not need to manually go through all of the data to ensure that I did not skip one.
+
 ## Bugs that needs to be fix
 - ~~When opening up the modal. The initial value is set to the previous stats of another Pokemon when hovering closely~~
   - Fixed using variableOfChart.destroy();
+
+## How to run
+To install of the NPM modules, enter code below on terminal:
+```
+npm install
+```
+*Note: For nodemon, you may need to run it as* ```npm install -g nodemon```
+
+To run locally, enter:
+```
+nodemon app.js
+```
 
 ## Resources I used to learn
 - [Stat Formulas](https://bulbapedia.bulbagarden.net/wiki/Statistic#In-battle_modification)
