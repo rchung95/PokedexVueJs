@@ -23,7 +23,8 @@ To learn a new JS language alongside another frontend framework similar to Boots
 - ~~Add in pokemon image~~
 - ~~Scrape more for stats like legendary, has mega, tier list, generation etc.~~
 - ~~Add in the web scraping code~~
-- Add in the CSVtoJSON code
+- ~~Add in the CSVtoJSON code~~
+- ~~Move jsons to another file~~
 
 Will add more if I can think of anything.
 
@@ -92,6 +93,8 @@ For the future, I plan on building a better scraper so I do not need to manually
 ## Bugs that needs to be fix
 - ~~When opening up the modal. The initial value is set to the previous stats of another Pokemon when hovering closely~~
   - Fixed using variableOfChart.destroy();
+- ~~Stats would constantly change every time you click "update" to the past duplicate pokemon~~
+  - This is due the json not having an unique id. All you need to do is create one and it will fix this problem
 
 ## How to run
 To install of the NPM modules, enter code below on terminal:
