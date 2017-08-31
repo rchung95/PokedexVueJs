@@ -128,3 +128,6 @@ npm start
 - [Grid Component](https://vuejs.org/v2/examples/grid-component.html)
 - [x-template issue](https://github.com/vuejs/vue/issues/4276)
 - [Web Scraper tutorial](https://first-web-scraper.readthedocs.io/en/latest/#act-3-web-scraping)
+
+## Credit
+Pokemon is created by Ishihara Tsunekazu and belongs to The Pokémon Company. I used Pokemon images for educational learning purposes.
