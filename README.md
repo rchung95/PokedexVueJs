@@ -3,6 +3,9 @@
 ## Goal
 To learn a new JS language alongside another frontend framework similar to Bootstrap.
 
+## Future of this project
+It was a great three weeks working on this. I learned a lot and overcame a few challenges. I know for a fact that I would love to keep this pokedex up-to-date whenever possible, so I am open-sourcing this project to anyone.
+
 ## TODO
 - Search functionality
   - ~~search a name~~
@@ -26,7 +29,7 @@ To learn a new JS language alongside another frontend framework similar to Boots
 - ~~Add in the CSVtoJSON code~~
 - ~~Move jsons to another file~~
 - Refactor code more
-- Upload to a server like digital ocean or heroku
+- ~~Upload to a server like digital ocean or heroku~~
 
 Will add more if I can think of anything.
 
@@ -111,13 +114,14 @@ To run locally, set up the mongoDB instance first by entering: ```mongod``` then
 ```
 mongoimport --jsonArray --db DATABASENAME --collection COLLECTIONNAME --file pokedex.json
 ```
-*Note: You may need to modify the pokedex.json file by making it into a list like in Python (e.g. [{'json': 1}, {'json': 2}...])*
+*Note: Use ```mongopokedex.json``` if you wish to import it to a database like mLabs*
 
 Lastly, run:
 
 ```
-nodemon app.js
+npm start
 ```
+*Note: Implement your own MONGODB_URI variable!*
 
 ## Resources I used to learn
 - [Stat Formulas](https://bulbapedia.bulbagarden.net/wiki/Statistic#In-battle_modification)

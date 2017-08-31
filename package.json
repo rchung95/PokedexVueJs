@@ -4,7 +4,7 @@
   "description": "A pokedex containing 151 pokemons with plans for expansion",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
