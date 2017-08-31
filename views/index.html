@@ -19,6 +19,11 @@
 									<div class="column is-2">
 										<p>Level: <input type="number" id="desiredlevel" class="input" name="level" value="1" min="1" max="100"></p>
 									</div>
+									<div class="column is-4">
+										<p>Ability 1: <input class="input" id="aaa" disabled></p>
+										<p>Ability 2: <input class="input" id="bbb" disabled></p>
+										<p>Hidden Ability: <input class="input" id="ccc" disabled></p>
+									</div>
 									<div class="column is-3">
 										<select v-model="selected" class="select">
 											<option v-for="option in options" v-bind:value="[option.str, option.weakness]">
@@ -143,6 +148,7 @@
 			</table>
 		</script>
 
+		<script type="text/javascript" src="/axios/axios.min.js"></script>
 		<script type="text/javascript" src="/pokedex.js"></script>
 		<script type="text/javascript" src="/index.js"></script>
 	</body>

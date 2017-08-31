@@ -14,7 +14,7 @@ To learn a new JS language alongside another frontend framework similar to Boots
   - ~~Bulma (potentially remove it in favour of custom classes)~~
   - ~~Custom clases~~
 - ~~Use node.js to make it fully a web application~~
-- Connect it to potentially a database
+- ~~Connect it to potentially a database~~
 - ~~Levels, IV/EV values~~
 - ~~Analytical graph? Potentially D3.js to showcase its 6 stats and/or IV/EV~~
 - ~~Rewrite js part so it aligns with vue.js code~~
@@ -25,13 +25,16 @@ To learn a new JS language alongside another frontend framework similar to Boots
 - ~~Add in the web scraping code~~
 - ~~Add in the CSVtoJSON code~~
 - ~~Move jsons to another file~~
+- Refactor code more
+- Upload to a server liek digital ocean or heroku
 
 Will add more if I can think of anything.
 
-## Languages/Framework used
+## Languages/Framework/Database used
 - Vue.js
 - Bulma
 - Python
+- MongoDB
 
 ## Challenges I faced
 1. Searching multiple categories
@@ -103,7 +106,11 @@ npm install
 ```
 *Note: For nodemon, you may need to run it as* ```npm install -g nodemon```
 
-To run locally, enter:
+To run locally, set up the mongoDB instance first by entering:
+```
+mongod
+```
+then
 ```
 nodemon app.js
 ```

@@ -17,7 +17,6 @@
 var myRadarChart;
 var pokenDex;
 
-var pokemondata = pokedata;
 var naturejson = naturelist;
 
 var stat2 = {
@@ -70,6 +69,7 @@ var pokeTable = {
 					return Object.keys(row).some(function() {
 						return String(row['nDex']).toLowerCase().indexOf(filterKey) > -1
 							|| String(row['name']).toLowerCase().indexOf(filterKey) > -1
+							|| String(row['tier']).toLowerCase().indexOf(filterKey) > -1
 							|| String(row['type1']).toLowerCase().indexOf(filterKey) > -1
 							|| String(row['type2']).toLowerCase().indexOf(filterKey) > -1
 					})
@@ -108,8 +108,14 @@ var pokeTable = {
 		},
 
 		"chartMe": function (pokemon, pokemonInfo) {
+			// Need to refactor these
 			document.getElementById("fff").src = pokemon.image;
+			document.getElementById("aaa").value = pokemon.ability1;
+			document.getElementById("bbb").value = pokemon.ability2;
+			document.getElementById("ccc").value = pokemon.hiddenability;
+			console.log(pokemon.ability1);
 			document.getElementById("asdfg").classList.add("is-active");
+			
 			Chart.defaults.global.tooltips.enabled = false;
 			Chart.defaults.global.responsive = false;
 			Chart.defaults.global.maintainAspectRatio = true;
@@ -210,9 +216,21 @@ var pokedex = new Vue({
 		ev: 0,
 		searchQuery: '',
 		selected: ['atk', 'sp.atk'],
-		pokColumns: ['nDex', 'name', 'type1', 'type2'],
-		pokemonList: this.pokemondata,
+		pokColumns: ['nDex', 'name', 'tier', 'ability1', 'ability2', 'hiddenability', 'type1', 'type2'],
+		pokemonList: [],
 		options: this.naturejson
+	},
+
+	mounted() {
+		/*
+			mounted() is a function in Vue.js which allows me to call a new instance of pokemonList
+			axios is a promised based HTTP client which works well with Vue.js and Node.js
+		*/
+
+		axios.get('/pokedexdb')
+			.then(response => {
+				this.pokemonList = response.data;
+			});
 	},
 
 	methods: {
@@ -267,7 +285,7 @@ var pokedex = new Vue({
 		},
 
 		// Need to refactor this code and its helper function better
-		"addData": function(something, level) {
+		"addData": function(pokemon, level) {
 			this.check = true;
 			this.desiredlevel = parseInt(document.getElementById("desiredlevel").value);
 			this.iv = [parseInt(document.getElementById("ivHp").value), parseInt(document.getElementById("ivAtk").value), parseInt(document.getElementById("ivDef").value), parseInt(document.getElementById("ivSpAtk").value), parseInt(document.getElementById("ivSpDef").value), parseInt(document.getElementById("ivSpe").value)];
@@ -283,11 +301,9 @@ var pokedex = new Vue({
 			this.checkEV(this.ev);
 			this.checkIV(this.iv);
 
-			console.log(something.name);
-
 			if (this.check) {
-				var base2 = pokeTable.methods.calcStat(something, this.desiredlevel, this.iv, this.ev, this.selected);
-				var base = pokeTable.methods.calcStat(something, this.desiredlevel, [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], this.selected);
+				var base2 = pokeTable.methods.calcStat(pokemon, this.desiredlevel, this.iv, this.ev, this.selected);
+				var base = pokeTable.methods.calcStat(pokemon, this.desiredlevel, [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], this.selected);
 
 				myRadarChart.data.datasets[0].data = base;
 
