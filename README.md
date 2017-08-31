@@ -26,7 +26,7 @@ To learn a new JS language alongside another frontend framework similar to Boots
 - ~~Add in the CSVtoJSON code~~
 - ~~Move jsons to another file~~
 - Refactor code more
-- Upload to a server liek digital ocean or heroku
+- Upload to a server like digital ocean or heroku
 
 Will add more if I can think of anything.
 
@@ -106,11 +106,15 @@ npm install
 ```
 *Note: For nodemon, you may need to run it as* ```npm install -g nodemon```
 
-To run locally, set up the mongoDB instance first by entering:
+To run locally, set up the mongoDB instance first by entering: ```mongod``` then open up another terminal tab. Go to the pokeScraper directory by entering ```cd ./pokeScraper``` then import the ```pokedex.json``` file into the DB using:
+
 ```
-mongod
+mongoimport --jsonArray --db DATABASENAME --collection COLLECTIONNAME --file pokedex.json
 ```
-then
+*Note: You may need to modify the pokedex.json file by making it into a list like in Python (e.g. [{'json': 1}, {'json': 2}...])*
+
+Lastly, run:
+
 ```
 nodemon app.js
 ```
