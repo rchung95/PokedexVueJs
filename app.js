@@ -16,4 +16,4 @@ app.use('/scripts', express.static(__dirname + '/node_modules/vue/dist/'), expre
 app.use('/style', express.static(__dirname + '/node_modules/bulma/css/'));
 app.use('/axios', express.static(__dirname + '/node_modules/axios/dist/'))
 
-app.listen(3000, function() {});
+app.listen(5000, function() {});
