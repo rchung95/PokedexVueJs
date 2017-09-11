@@ -89,3 +89,6 @@
 	background-color: rgba(10, 10, 10, 0.4);
 }
 
+.table td {
+	cursor: pointer;
+}
