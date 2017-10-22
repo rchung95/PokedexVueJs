@@ -39,7 +39,7 @@ var pokeTable = {
 		columns: Array,
 		filterKey: String
 	},
-
+    
 	data: function() {
 		var sortOrders = {}
 		this.columns.forEach(function(key) {
@@ -60,11 +60,13 @@ var pokeTable = {
 
 		filteredPokemon: function() {
 			var sortKey = this.sortColumn
-			var filterKey = this.filterKey && this.filterKey.toLowerCase()
+			var filterKey = this.filterKey;
 			var order = this.sortOrders[sortKey] || 1
-			var data = this.data
+            var data = this.data
+            var filter = "";
 
-			if (filterKey) {
+			if (filterKey && filterKey.split('?').length === 1) {
+                // if not a specific question, use standard filter
 				data = data.filter(function(row) {
 					return Object.keys(row).some(function() {
 						return String(row['nDex']).toLowerCase().indexOf(filterKey) > -1
@@ -74,7 +76,47 @@ var pokeTable = {
 							|| String(row['type2']).toLowerCase().indexOf(filterKey) > -1
 					})
 				})
-			}
+			} else if (filterKey) {
+                // if it's a question, try to return results based on the question criteria
+                // can add more filter variety below, and set the order based on input as well 
+                // i.e. strongest or weakest, highest or lowest, etc. Will pull this stat from db.
+                let f = filterKey.toLowerCase();
+                filter = (() => {
+                    // set filter 
+                    if (f.includes('fastest') || f.includes('speed')) {
+                        return 'spe';
+                    } else if (f.includes('strongest') || f.includes('attack') && !f.includes('special')) {
+                        return 'atk';
+                    } 
+                    else if (f.includes('toughest') || f.includes('defense') && !f.includes('special')) {
+                        return 'def';
+                    } else if (f.includes('healthiest') || f.includes('hp')) {
+                        return 'hp';
+                    } else if (f.includes('special attack')) {
+                        return 'spatk';
+                    } else if (f.includes('special defense')) {
+                        return 'spdef';
+                    }
+                })();
+
+                // set order
+                if (f.includes('slowest') || f.includes('weakest')
+                    || f.includes('lightest') || f.includes('least')
+                    || f.includes('worst')) {
+                        order = -1;
+                } else {
+                    // can handle opposite cases-- most, best, greatest, etc
+                    order = 1;
+                }
+
+                data = data.sort((a, b) => {
+                    if (order === -1) {
+                        return a[filter] - b[filter];
+                    } else {
+                        return b[filter] - a[filter];
+                    }
+                });
+            }
 
 			if (sortKey) {
 				data = data.slice().sort(function(a, b) {
