@@ -6,30 +6,14 @@ To learn a new JS language alongside another frontend framework similar to Boots
 ## Future of this project
 It was a great three weeks working on this. I learned a lot and overcame a few challenges. I know for a fact that I would love to keep this pokedex up-to-date whenever possible, so I am open-sourcing this project to anyone.
 
-## TODO
-- Search functionality
-  - ~~search a name~~
-  - ~~multiple categories~~
-  - search questions
-- ~~Change type to type 1 and type 2 as some pokemon like Bulbasaur has multiple types~~
-- ~~Add in the rest of the pokemon~~
-- Stylize it
-  - ~~Bulma (potentially remove it in favour of custom classes)~~
-  - ~~Custom clases~~
-- ~~Use node.js to make it fully a web application~~
-- ~~Connect it to potentially a database~~
-- ~~Levels, IV/EV values~~
-- ~~Analytical graph? Potentially D3.js to showcase its 6 stats and/or IV/EV~~
-- ~~Rewrite js part so it aligns with vue.js code~~
-- ~~Build a web scraper~~
-- ~~Rewrite Chart js part, so it is more reuseable?~~
-- ~~Add in pokemon image~~
-- ~~Scrape more for stats like legendary, has mega, tier list, generation etc.~~
-- ~~Add in the web scraping code~~
-- ~~Add in the CSVtoJSON code~~
-- ~~Move jsons to another file~~
-- Refactor code more
-- ~~Upload to a server like digital ocean or heroku~~
+## Updating to v2
+For version 2, I plan on doing the following:
+- Expanding the API to include more data
+- Break up the API data into smaller chucks
+- Redesign the current UI of the pokemon page
+- Add unit tests to calculating methods
+
+Currently I am debating whether to continue using mongoDB to hold the data or go static and host all the data locally or somewhere else.
 
 Will add more if I can think of anything.
 
