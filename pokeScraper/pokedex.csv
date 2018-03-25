@@ -181,7 +181,7 @@
 181,150,Mewtwo,Psychic,,Pressure,,Unnerve,106,110,90,154,90,130,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png
 182,150,Mewtwo (Mega Mewtwo X),Psychic,Fighting,Steadfast,,,106,190,100,154,100,130,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/150_f2.png
 183,150,Mewtwo (Mega Mewtwo Y),Psychic,,Insomnia,,,106,150,70,194,120,140,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/150_f3.png
-184,151,Mew,Psychic,,Synchronize,,,100,100,100,100,100,100,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png
+184,151,Mew,Psychic,,Synchronize,,,100,100,100,100,100,100,Mythical,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png
 185,152,Chikorita,Grass,,Overgrow,,Leaf Guard,45,49,65,49,65,45,Starter,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/152.png
 186,153,Bayleef,Grass,,Overgrow,,Leaf Guard,60,62,80,63,80,60,Starter,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/153.png
 187,154,Meganium,Grass,,Overgrow,,Leaf Guard,80,82,100,83,100,80,Starter,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/154.png
@@ -287,7 +287,7 @@
 287,248,Tyranitar (Mega Tyranitar),Rock,Dark,Sand Stream,,,100,164,150,95,120,71,Pseudo-Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/248_f2.png
 288,249,Lugia,Psychic,Flying,Pressure,,Multiscale,106,90,130,90,154,110,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/249.png
 289,250,Ho-Oh,Fire,Flying,Pressure,,Regenerator,106,130,90,110,154,90,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/250.png
-290,251,Celebi,Psychic,Grass,Natural Cure,,,100,100,100,100,100,100,Legendary,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/251.png
+290,251,Celebi,Psychic,Grass,Natural Cure,,,100,100,100,100,100,100,Mythical,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/251.png
 291,252,Treecko,Grass,,Overgrow,,Unburden,40,45,35,65,55,70,Starter,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/252.png
 292,253,Grovyle,Grass,,Overgrow,,Unburden,50,65,45,85,65,95,Starter,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/253.png
 293,254,Sceptile,Grass,,Overgrow,,Unburden,70,85,65,105,85,120,Starter,NU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/254.png
@@ -443,11 +443,11 @@
 443,383,Groudon (Primal Groudon),Ground,Fire,Desolate Land,,,100,180,160,150,90,90,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/383_f2.png
 444,384,Rayquaza,Dragon,Flying,Air Lock,,,105,150,90,150,90,95,Legendary,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/384.png
 445,384,Rayquaza (Mega Rayquaza),Dragon,Flying,Delta Stream,,,105,180,100,180,100,115,Legendary,AG,https://assets.pokemon.com/assets/cms2/img/pokedex/full/384_f2.png
-446,385,Jirachi,Steel,Psychic,Serene Grace,,,100,100,100,100,100,100,Legendary,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/385.png
-447,386,Deoxys (Normal Forme),Psychic,,Pressure,,,50,150,50,150,50,150,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/386.png
-448,386,Deoxys (Attack Forme),Psychic,,Pressure,,,50,180,20,180,20,150,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/386_f2.png
-449,386,Deoxys (Defense Forme),Psychic,,Pressure,,,50,70,160,70,160,90,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/386_f3.png
-450,386,Deoxys (Speed Forme),Psychic,,Pressure,,,50,95,90,95,90,180,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/386_f4.png
+446,385,Jirachi,Steel,Psychic,Serene Grace,,,100,100,100,100,100,100,Mythical,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/385.png
+447,386,Deoxys (Normal Forme),Psychic,,Pressure,,,50,150,50,150,50,150,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/386.png
+448,386,Deoxys (Attack Forme),Psychic,,Pressure,,,50,180,20,180,20,150,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/386_f2.png
+449,386,Deoxys (Defense Forme),Psychic,,Pressure,,,50,70,160,70,160,90,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/386_f3.png
+450,386,Deoxys (Speed Forme),Psychic,,Pressure,,,50,95,90,95,90,180,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/386_f4.png
 451,387,Turtwig,Grass,,Overgrow,,Shell Armor,55,68,64,45,55,31,Starter,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/387.png
 452,388,Grotle,Grass,,Overgrow,,Shell Armor,75,89,85,55,65,36,Starter,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/388.png
 453,389,Torterra,Grass,Ground,Overgrow,,Shell Armor,95,109,105,75,85,56,Starter,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/389.png
@@ -563,30 +563,30 @@
 563,487,Giratina (Altered Forme),Ghost,Dragon,Pressure,Levitate,Telepathy,150,100,120,100,120,90,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/487.png
 564,487,Giratina (Origin Forme),Ghost,Dragon,Pressure,Levitate,Telepathy,150,120,100,120,100,90,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/487_f2.png
 565,488,Cresselia,Psychic,,Levitate,,,120,70,120,75,130,85,Legendary,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/488.png
-566,489,Phione,Water,,Hydration,,,80,80,80,80,80,80,Legendary,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/489.png
-567,490,Manaphy,Water,,Hydration,,,100,100,100,100,100,100,Legendary,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/490.png
-568,491,Darkrai,Dark,,Bad Dreams,,,70,90,90,135,90,125,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/491.png
-569,492,Shaymin (Land Forme),Grass,,Natural Cure,Serene Grace,,100,100,100,100,100,100,Legendary,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/492.png
-570,492,Shaymin (Sky Forme),Grass,Flying,Natural Cure,Serene Grace,,100,103,75,120,75,127,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/492_f2.png
-571,493,Arceus,Normal,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493.png
-572,493,Arceus,Fighting,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f2.png
-573,493,Arceus,Flying,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f3.png
-574,493,Arceus,Poison,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f4.png
-575,493,Arceus,Ground,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f5.png
-576,493,Arceus,Rock,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f6.png
-577,493,Arceus,Bug,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f7.png
-578,493,Arceus,Ghost,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f8.png
-579,493,Arceus,Steel,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f9.png
-580,493,Arceus,Fire,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f10.png
-581,493,Arceus,Water,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f11.png
-582,493,Arceus,Grass,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f12.png
-583,493,Arceus,Electric,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f13.png
-584,493,Arceus,Psychic,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f14.png
-585,493,Arceus,Ice,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f15.png
-586,493,Arceus,Dragon,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f16.png
-587,493,Arceus,Dark,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f17.png
-588,493,Arceus,Fairy,,Multitype,,,120,120,120,120,120,120,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f18.png
-589,494,Victini,Psychic,Fire,Victory Star,,,100,100,100,100,100,100,Legendary,BL,https://assets.pokemon.com/assets/cms2/img/pokedex/full/494.png
+566,489,Phione,Water,,Hydration,,,80,80,80,80,80,80,Mythical,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/489.png
+567,490,Manaphy,Water,,Hydration,,,100,100,100,100,100,100,Mythical,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/490.png
+568,491,Darkrai,Dark,,Bad Dreams,,,70,90,90,135,90,125,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/491.png
+569,492,Shaymin (Land Forme),Grass,,Natural Cure,Serene Grace,,100,100,100,100,100,100,Mythical,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/492.png
+570,492,Shaymin (Sky Forme),Grass,Flying,Natural Cure,Serene Grace,,100,103,75,120,75,127,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/492_f2.png
+571,493,Arceus,Normal,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493.png
+572,493,Arceus,Fighting,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f2.png
+573,493,Arceus,Flying,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f3.png
+574,493,Arceus,Poison,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f4.png
+575,493,Arceus,Ground,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f5.png
+576,493,Arceus,Rock,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f6.png
+577,493,Arceus,Bug,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f7.png
+578,493,Arceus,Ghost,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f8.png
+579,493,Arceus,Steel,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f9.png
+580,493,Arceus,Fire,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f10.png
+581,493,Arceus,Water,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f11.png
+582,493,Arceus,Grass,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f12.png
+583,493,Arceus,Electric,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f13.png
+584,493,Arceus,Psychic,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f14.png
+585,493,Arceus,Ice,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f15.png
+586,493,Arceus,Dragon,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f16.png
+587,493,Arceus,Dark,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f17.png
+588,493,Arceus,Fairy,,Multitype,,,120,120,120,120,120,120,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/493_f18.png
+589,494,Victini,Psychic,Fire,Victory Star,,,100,100,100,100,100,100,Mythical,BL,https://assets.pokemon.com/assets/cms2/img/pokedex/full/494.png
 590,495,Snivy,Grass,,Overgrow,,Contrary,45,45,55,45,55,63,Starter,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/495.png
 591,496,Servine,Grass,,Overgrow,,Contrary,60,60,75,60,75,83,Starter,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/496.png
 592,497,Serperior,Grass,,Overgrow,,Contrary,75,75,95,75,95,113,Starter,BL,https://assets.pokemon.com/assets/cms2/img/pokedex/full/497.png
@@ -747,10 +747,10 @@
 747,646,Kyurem (Normal Kyurem),Dragon,Ice,Pressure,,,125,130,90,130,90,95,Legendary,BL2,https://assets.pokemon.com/assets/cms2/img/pokedex/full/646.png
 748,646,Kyurem (Black Kyurem),Dragon,Ice,Teravolt,,,125,170,100,120,90,95,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/646_f3.png
 749,646,Kyurem (White Kyurem),Dragon,Ice,Turboblaze,,,125,120,90,170,100,95,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/646_f2.png
-750,647,Keldeo,Water,Fighting,Justified,,,91,72,90,129,90,108,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/647.png
-751,648,Meloetta (Aria Forme),Normal,Psychic,Serene Grace,,,100,77,77,128,128,90,Legendary,NU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/648.png
-752,648,Meloetta (Pirouette Forme),Normal,Fighting,Serene Grace,,,100,128,90,77,77,128,Legendary,NU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/648_f2.png
-753,649,Genesect,Bug,Steel,Download,,,71,120,95,120,95,99,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/649.png
+750,647,Keldeo,Water,Fighting,Justified,,,91,72,90,129,90,108,Mythical,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/647.png
+751,648,Meloetta (Aria Forme),Normal,Psychic,Serene Grace,,,100,77,77,128,128,90,Mythical,NU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/648.png
+752,648,Meloetta (Pirouette Forme),Normal,Fighting,Serene Grace,,,100,128,90,77,77,128,Mythical,NU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/648_f2.png
+753,649,Genesect,Bug,Steel,Download,,,71,120,95,120,95,99,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/649.png
 754,650,Chespin,Grass,,Overgrow,,Bulletproof,56,61,65,48,45,38,Starter,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/650.png
 755,651,Quilladin,Grass,,Overgrow,,Bulletproof,61,78,95,56,58,57,Starter,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/651.png
 756,652,Chesnaught,Grass,Fighting,Overgrow,,Bulletproof,88,107,122,74,75,64,Starter,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/652.png
@@ -830,11 +830,11 @@
 830,718,Zygarde  (50% Forme),Dragon,Ground,Aura Break,Power Construct,,108,100,121,81,95,95,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/718.png
 831,718,Zygarde  (10% Forme),Dragon,Ground,Aura Break,Power Construct,,54,100,71,61,85,115,Legendary,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/718_f2.png
 832,718,Zygarde (Complete Forme),Dragon,Ground,Power Construct,,,216,100,121,91,95,85,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/718_f3.png
-833,719,Diancie,Rock,Fairy,Clear Body,,,50,100,150,100,150,50,Legendary,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/719.png
-834,719,Diancie (Mega Diancie),Rock,Fairy,Magic Bounce,,,50,160,110,160,110,110,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/719_f2.png
-835,720,Hoopa (Hoopa Confined),Psychic,Ghost,Magician,,,80,110,60,150,130,70,Legendary,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/720.png
-836,720,Hoopa (Hoopa Unbound),Psychic,Dark,Magician,,,80,160,60,170,130,80,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/720_f2.png
-837,721,Volcanion,Fire,Water,Water Absorb,,,80,110,120,130,90,70,Legendary,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/721.png
+833,719,Diancie,Rock,Fairy,Clear Body,,,50,100,150,100,150,50,Mythical,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/719.png
+834,719,Diancie (Mega Diancie),Rock,Fairy,Magic Bounce,,,50,160,110,160,110,110,Mythical,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/719_f2.png
+835,720,Hoopa (Hoopa Confined),Psychic,Ghost,Magician,,,80,110,60,150,130,70,Mythical,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/720.png
+836,720,Hoopa (Hoopa Unbound),Psychic,Dark,Magician,,,80,160,60,170,130,80,Mythical,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/720_f2.png
+837,721,Volcanion,Fire,Water,Water Absorb,,,80,110,120,130,90,70,Mythical,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/721.png
 838,722,Rowlet,Grass,Flying,Overgrow,,Long Reach,68,55,55,50,50,42,Starter,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/722.png
 839,723,Dartrix,Grass,Flying,Overgrow,,Long Reach,78,75,75,70,70,52,Starter,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/723.png
 840,724,Decidueye,Grass,Ghost,Overgrow,,Long Reach,78,107,75,100,100,70,Starter,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/724.png
@@ -863,79 +863,88 @@
 863,744,Rockruff,Rock,,Keen Eye,Vital Spirit,Steadfast,45,65,40,30,40,60,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/744.png
 864,745,Lycanroc (Midday Form),Rock,,Keen Eye,Sand Rush,Steadfast,75,115,65,55,65,112,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/745.png
 865,745,Lycanroc (Midnight Form),Rock,,Keen Eye,Vital Spirit,No Guard,85,115,75,55,75,82,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/745_f2.png
-866,746,Wishiwashi (Solo Form),Water,,Schooling,,,45,20,20,25,25,40,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/746.png
-867,746,Wishiwashi (School Form),Water,,Schooling,,,45,140,130,140,135,30,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/746_f2.png
-868,747,Mareanie,Poison,Water,Merciless,Limber,Regenerator,50,53,62,43,52,45,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/747.png
-869,748,Toxapex,Poison,Water,Merciless,Limber,Regenerator,50,63,152,53,142,35,,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/748.png
-870,749,Mudbray,Ground,,Own Tempo,Stamina,Inner Focus,70,100,70,45,55,45,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/749.png
-871,750,Mudsdale,Ground,,Own Tempo,Stamina,Inner Focus,100,125,100,55,85,35,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/750.png
-872,751,Dewpider,Water,Bug,Water Bubble,,Water Absorb,38,40,52,40,72,27,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/751.png
-873,752,Araquanid,Water,Bug,Water Bubble,,Water Absorb,68,70,92,50,132,42,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/752.png
-874,753,Fomantis,Grass,,Leaf Guard,,Contrary,40,55,35,50,35,35,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/753.png
-875,754,Lurantis,Grass,,Leaf Guard,,Contrary,70,105,90,80,90,45,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/754.png
-876,755,Morelull,Grass,Fairy,Illuminate,Effect Spore,Rain Dish,40,35,55,65,75,15,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/755.png
-877,756,Shiinotic,Grass,Fairy,Illuminate,Effect Spore,Rain Dish,60,45,80,90,100,30,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/756.png
-878,757,Salandit,Poison,Fire,Corrosion,,Oblivious,48,44,40,71,40,77,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/757.png
-879,758,Salazzle,Poison,Fire,Corrosion,,Oblivious,68,64,60,111,60,117,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/758.png
-880,759,Stufful,Normal,Fighting,Fluffy,Klutz,Cute Charm,70,75,50,45,50,50,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/759.png
-881,760,Bewear,Normal,Fighting,Fluffy,Klutz,Unnerve,120,125,80,55,60,60,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/760.png
-882,761,Bounsweet,Grass,,Leaf Guard,Oblivious,Sweet Veil,42,30,38,30,38,32,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/761.png
-883,762,Steenee,Grass,,Leaf Guard,Oblivious,Sweet Veil,52,40,48,40,48,62,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/762.png
-884,763,Tsareena,Grass,,Leaf Guard,Queenly Majesty,Sweet Veil,72,120,98,50,98,72,,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/763.png
-885,764,Comfey,Fairy,,Flower Veil,Triage,Natural Cure,51,52,90,82,110,100,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/764.png
-886,765,Oranguru,Normal,Psychic,Inner Focus,Telepathy,Symbiosis,90,60,80,90,110,60,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/765.png
-887,766,Passimian,Fighting,,Receiver,,Defiant,100,120,90,40,60,80,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/766.png
-888,767,Wimpod,Bug,Water,Wimp Out,,,25,35,40,20,30,80,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/767.png
-889,768,Golisopod,Bug,Water,Emergency Exit,,,75,125,140,60,90,40,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/768.png
-890,769,Sandygast,Ghost,Ground,Water Compaction,,Sand Veil,55,55,80,70,45,15,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/769.png
-891,770,Palossand,Ghost,Ground,Water Compaction,,Sand Veil,85,75,110,100,75,35,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/770.png
-892,771,Pyukumuku,Water,,Innards Out,,Unaware,55,60,130,30,130,5,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/771.png
-893,772,Type: Null,Normal,,Battle Armor,,,95,95,95,95,95,59,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/772.png
-894,773,Silvally,Normal,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-895,773,Silvally,Fighting,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-896,773,Silvally,Flying,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-897,773,Silvally,Poison,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-898,773,Silvally,Ground,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-899,773,Silvally,Rock,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-900,773,Silvally,Bug,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-901,773,Silvally,Ghost,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-902,773,Silvally,Steel,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-903,773,Silvally,Fire,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-904,773,Silvally,Water,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-905,773,Silvally,Grass,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-906,773,Silvally,Electric,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-907,773,Silvally,Psychic,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-908,773,Silvally,Ice,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-909,773,Silvally,Dragon,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-910,773,Silvally,Dark,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-911,773,Silvally,Fairy,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
-912,774,Minior (Meteor Form),Rock,Flying,Shields Down,,,60,60,100,60,100,60,,NU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/774.png
-913,774,Minior (Core Form),Rock,Flying,Shields Down,,,60,100,60,100,60,120,,NU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/774_f2.png
-914,775,Komala,Normal,,Comatose,,,65,115,65,75,95,65,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/775.png
-915,776,Turtonator,Fire,Dragon,Shell Armor,,,60,78,135,91,85,36,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/776.png
-916,777,Togedemaru,Electric,Steel,Iron Barbs,Lightning Rod,Sturdy,65,98,63,40,73,96,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/777.png
-917,778,Mimikyu,Ghost,Fairy,Disguise,,,55,90,80,50,105,96,,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/778.png
-918,779,Bruxish,Water,Psychic,Dazzling,Strong Jaw,Wonder Skin,68,105,70,70,70,92,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/779.png
-919,780,Drampa,Normal,Dragon,Berserk,Sap Sipper,Cloud Nine,78,60,85,135,91,36,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/780.png
-920,781,Dhelmise,Ghost,Grass,Steelworker,,,70,131,100,86,90,40,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/781.png
-921,782,Jangmo-o,Dragon,,Bulletproof,Soundproof,Overcoat,45,55,65,45,45,45,Pseudo-Legendary,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/782.png
-922,783,Hakamo-o,Dragon,Fighting,Bulletproof,Soundproof,Overcoat,55,75,90,65,70,65,Pseudo-Legendary,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/783.png
-923,784,Kommo-o,Dragon,Fighting,Bulletproof,Soundproof,Overcoat,75,110,125,100,105,85,Pseudo-Legendary,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/784.png
-924,785,Tapu Koko,Electric,Fairy,Electric Surge,,Telepathy,70,115,85,95,75,130,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/785.png
-925,786,Tapu Lele,Psychic,Fairy,Psychic Surge,,Telepathy,70,85,75,130,115,95,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/786.png
-926,787,Tapu Bulu,Grass,Fairy,Grassy Surge,,Telepathy,70,130,115,85,95,75,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/787.png
-927,788,Tapu Fini,Water,Fairy,Misty Surge,,Telepathy,70,75,115,95,130,85,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/788.png
-928,789,Cosmog,Psychic,,Unaware,,,43,29,31,29,31,37,Legendary,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/789.png
-929,790,Cosmoem,Psychic,,Sturdy,,,43,29,131,29,131,37,Legendary,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/790.png
-930,791,Solgaleo,Psychic,Steel,Full Metal Body,,,137,137,107,113,89,97,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/791.png
-931,792,Lunala,Psychic,Ghost,Shadow Shield,,,137,113,89,137,107,97,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/792.png
-932,793,Nihilego,Rock,Poison,Beast Boost,,,109,53,47,127,131,103,Ultra-Beast,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/793.png
-933,794,Buzzwole,Bug,Fighting,Beast Boost,,,107,139,139,53,53,79,Ultra-Beast,BL,https://assets.pokemon.com/assets/cms2/img/pokedex/full/794.png
-934,795,Pheromosa,Bug,Fighting,Beast Boost,,,71,137,37,137,37,151,Ultra-Beast,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/795.png
-935,796,Xurkitree,Electric,,Beast Boost,,,83,89,71,173,71,83,Ultra-Beast,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/796.png
-936,797,Celesteela,Steel,Flying,Beast Boost,,,97,101,103,107,101,61,Ultra-Beast,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/797.png
-937,798,Kartana,Grass,Steel,Beast Boost,,,59,181,131,59,31,109,Ultra-Beast,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/798.png
-938,799,Guzzlord,Dark,Dragon,Beast Boost,,,223,101,53,97,53,43,Ultra-Beast,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/799.png
-939,800,Necrozma,Psychic,,Prism Armor,,,97,107,101,127,89,79,Legendary,BL3,https://assets.pokemon.com/assets/cms2/img/pokedex/full/800.png
-940,801,Magearna,Steel,Fairy,Soul-Heart,,,80,95,115,130,115,65,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/801.png
-941,802,Marshadow,Dark,Ice,Technician,,,90,125,80,90,90,125,Legendary,Uber,https://cdn.bulbagarden.net/upload/8/89/802Marshadow.png
+866,745,Lycanroc (Dusk Form),Rock,,Tough Claws,,,75,117,65,55,65,110,,RU,https://cdn.bulbagarden.net/upload/3/37/745Lycanroc-Dusk.png
+867,746,Wishiwashi (Solo Form),Water,,Schooling,,,45,20,20,25,25,40,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/746.png
+868,746,Wishiwashi (School Form),Water,,Schooling,,,45,140,130,140,135,30,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/746_f2.png
+869,747,Mareanie,Poison,Water,Merciless,Limber,Regenerator,50,53,62,43,52,45,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/747.png
+870,748,Toxapex,Poison,Water,Merciless,Limber,Regenerator,50,63,152,53,142,35,,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/748.png
+871,749,Mudbray,Ground,,Own Tempo,Stamina,Inner Focus,70,100,70,45,55,45,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/749.png
+872,750,Mudsdale,Ground,,Own Tempo,Stamina,Inner Focus,100,125,100,55,85,35,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/750.png
+873,751,Dewpider,Water,Bug,Water Bubble,,Water Absorb,38,40,52,40,72,27,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/751.png
+874,752,Araquanid,Water,Bug,Water Bubble,,Water Absorb,68,70,92,50,132,42,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/752.png
+875,753,Fomantis,Grass,,Leaf Guard,,Contrary,40,55,35,50,35,35,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/753.png
+876,754,Lurantis,Grass,,Leaf Guard,,Contrary,70,105,90,80,90,45,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/754.png
+877,755,Morelull,Grass,Fairy,Illuminate,Effect Spore,Rain Dish,40,35,55,65,75,15,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/755.png
+878,756,Shiinotic,Grass,Fairy,Illuminate,Effect Spore,Rain Dish,60,45,80,90,100,30,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/756.png
+879,757,Salandit,Poison,Fire,Corrosion,,Oblivious,48,44,40,71,40,77,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/757.png
+880,758,Salazzle,Poison,Fire,Corrosion,,Oblivious,68,64,60,111,60,117,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/758.png
+881,759,Stufful,Normal,Fighting,Fluffy,Klutz,Cute Charm,70,75,50,45,50,50,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/759.png
+882,760,Bewear,Normal,Fighting,Fluffy,Klutz,Unnerve,120,125,80,55,60,60,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/760.png
+883,761,Bounsweet,Grass,,Leaf Guard,Oblivious,Sweet Veil,42,30,38,30,38,32,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/761.png
+884,762,Steenee,Grass,,Leaf Guard,Oblivious,Sweet Veil,52,40,48,40,48,62,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/762.png
+885,763,Tsareena,Grass,,Leaf Guard,Queenly Majesty,Sweet Veil,72,120,98,50,98,72,,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/763.png
+886,764,Comfey,Fairy,,Flower Veil,Triage,Natural Cure,51,52,90,82,110,100,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/764.png
+887,765,Oranguru,Normal,Psychic,Inner Focus,Telepathy,Symbiosis,90,60,80,90,110,60,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/765.png
+888,766,Passimian,Fighting,,Receiver,,Defiant,100,120,90,40,60,80,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/766.png
+889,767,Wimpod,Bug,Water,Wimp Out,,,25,35,40,20,30,80,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/767.png
+890,768,Golisopod,Bug,Water,Emergency Exit,,,75,125,140,60,90,40,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/768.png
+891,769,Sandygast,Ghost,Ground,Water Compaction,,Sand Veil,55,55,80,70,45,15,,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/769.png
+892,770,Palossand,Ghost,Ground,Water Compaction,,Sand Veil,85,75,110,100,75,35,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/770.png
+893,771,Pyukumuku,Water,,Innards Out,,Unaware,55,60,130,30,130,5,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/771.png
+894,772,Type: Null,Normal,,Battle Armor,,,95,95,95,95,95,59,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/772.png
+895,773,Silvally,Normal,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+896,773,Silvally,Fighting,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+897,773,Silvally,Flying,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+898,773,Silvally,Poison,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+899,773,Silvally,Ground,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+900,773,Silvally,Rock,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+901,773,Silvally,Bug,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+902,773,Silvally,Ghost,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+903,773,Silvally,Steel,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+904,773,Silvally,Fire,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+905,773,Silvally,Water,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+906,773,Silvally,Grass,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+907,773,Silvally,Electric,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+908,773,Silvally,Psychic,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+909,773,Silvally,Ice,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+910,773,Silvally,Dragon,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+911,773,Silvally,Dark,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+912,773,Silvally,Fairy,,RKS System,,,95,95,95,95,95,95,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/773.png
+913,774,Minior (Meteor Form),Rock,Flying,Shields Down,,,60,60,100,60,100,60,,NU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/774.png
+914,774,Minior (Core Form),Rock,Flying,Shields Down,,,60,100,60,100,60,120,,NU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/774_f2.png
+915,775,Komala,Normal,,Comatose,,,65,115,65,75,95,65,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/775.png
+916,776,Turtonator,Fire,Dragon,Shell Armor,,,60,78,135,91,85,36,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/776.png
+917,777,Togedemaru,Electric,Steel,Iron Barbs,Lightning Rod,Sturdy,65,98,63,40,73,96,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/777.png
+918,778,Mimikyu,Ghost,Fairy,Disguise,,,55,90,80,50,105,96,,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/778.png
+919,779,Bruxish,Water,Psychic,Dazzling,Strong Jaw,Wonder Skin,68,105,70,70,70,92,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/779.png
+920,780,Drampa,Normal,Dragon,Berserk,Sap Sipper,Cloud Nine,78,60,85,135,91,36,,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/780.png
+921,781,Dhelmise,Ghost,Grass,Steelworker,,,70,131,100,86,90,40,,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/781.png
+922,782,Jangmo-o,Dragon,,Bulletproof,Soundproof,Overcoat,45,55,65,45,45,45,Pseudo-Legendary,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/782.png
+923,783,Hakamo-o,Dragon,Fighting,Bulletproof,Soundproof,Overcoat,55,75,90,65,70,65,Pseudo-Legendary,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/783.png
+924,784,Kommo-o,Dragon,Fighting,Bulletproof,Soundproof,Overcoat,75,110,125,100,105,85,Pseudo-Legendary,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/784.png
+925,785,Tapu Koko,Electric,Fairy,Electric Surge,,Telepathy,70,115,85,95,75,130,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/785.png
+926,786,Tapu Lele,Psychic,Fairy,Psychic Surge,,Telepathy,70,85,75,130,115,95,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/786.png
+927,787,Tapu Bulu,Grass,Fairy,Grassy Surge,,Telepathy,70,130,115,85,95,75,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/787.png
+928,788,Tapu Fini,Water,Fairy,Misty Surge,,Telepathy,70,75,115,95,130,85,Legendary,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/788.png
+929,789,Cosmog,Psychic,,Unaware,,,43,29,31,29,31,37,Legendary,LC,https://assets.pokemon.com/assets/cms2/img/pokedex/full/789.png
+930,790,Cosmoem,Psychic,,Sturdy,,,43,29,131,29,131,37,Legendary,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/790.png
+931,791,Solgaleo,Psychic,Steel,Full Metal Body,,,137,137,107,113,89,97,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/791.png
+932,792,Lunala,Psychic,Ghost,Shadow Shield,,,137,113,89,137,107,97,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/792.png
+933,793,Nihilego,Rock,Poison,Beast Boost,,,109,53,47,127,131,103,Ultra-Beast,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/793.png
+934,794,Buzzwole,Bug,Fighting,Beast Boost,,,107,139,139,53,53,79,Ultra-Beast,BL,https://assets.pokemon.com/assets/cms2/img/pokedex/full/794.png
+935,795,Pheromosa,Bug,Fighting,Beast Boost,,,71,137,37,137,37,151,Ultra-Beast,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/795.png
+936,796,Xurkitree,Electric,,Beast Boost,,,83,89,71,173,71,83,Ultra-Beast,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/796.png
+937,797,Celesteela,Steel,Flying,Beast Boost,,,97,101,103,107,101,61,Ultra-Beast,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/797.png
+938,798,Kartana,Grass,Steel,Beast Boost,,,59,181,131,59,31,109,Ultra-Beast,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/798.png
+939,799,Guzzlord,Dark,Dragon,Beast Boost,,,223,101,53,97,53,43,Ultra-Beast,PU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/799.png
+940,800,Necrozma,Psychic,,Prism Armor,,,97,107,101,127,89,79,Legendary,RU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/800.png
+941,800,Necrozma (Dusk Mane),Psychic,Steel,Prism Armor,,,97,157,127,113,109,77,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/800_f2.png
+942,800,Necrozma (Dawn Wing),Psychic,Ghost,Prism Armor,,,97,113,109,157,127,77,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/800_f3.png
+943,800,Necrozma (Ultra),Psychic,Dragon,Neuroforce,,,97,167,97,167,97,129,Legendary,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/800_f4.png
+944,801,Magearna,Steel,Fairy,Soul-Heart,,,80,95,115,130,115,65,Mythical,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/801.png
+945,802,Marshadow,Dark,Ice,Technician,,,90,125,80,90,90,125,Mythical,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/802.png
+946,803,Poipole,Poison,,Beast Boost,,,67,73,67,73,67,73,Ultra-Beast,,https://assets.pokemon.com/assets/cms2/img/pokedex/full/803.png
+947,804,Naganadel,Poison,Dragon,Beast Boost,,,73,73,73,127,73,121,Ultra-Beast,Uber,https://assets.pokemon.com/assets/cms2/img/pokedex/full/804.png
+948,805,Stakataka,Rock,Steel,Beast Boost,,,61,131,211,53,101,13,Ultra-Beast,UU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/805.png
+949,806,Blacephalon,Fire,Ghost,Beast Boost,,,53,127,53,131,79,107,Ultra-Beast,OU,https://assets.pokemon.com/assets/cms2/img/pokedex/full/806.png
+950,807,Zeraora,Electric,,Volt Absorb,,,88,112,75,102,80,143,Mythical,Limbo,https://cdn.bulbagarden.net/upload/6/63/Spr_7u_807.png

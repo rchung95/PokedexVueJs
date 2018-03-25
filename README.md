@@ -6,12 +6,17 @@ To learn a new JS language alongside another frontend framework similar to Boots
 ## Future of this project
 It was a great three weeks working on this. I learned a lot and overcame a few challenges. I know for a fact that I would love to keep this pokedex up-to-date whenever possible, so I am open-sourcing this project to anyone.
 
+## Recent Update
+- Added more pokemons from Ultra Sun and Moon
+- You can now ask questions like ```Who is the fastest?```
+
 ## Updating to v2
 For version 2, I plan on doing the following:
 - Expanding the API to include more data
 - Break up the API data into smaller chucks
 - Redesign the current UI of the pokemon page
 - Add unit tests to calculating methods
+- Make it mobile-friendly (if possible with Chart.js)
 
 Currently I am debating whether to continue using mongoDB to hold the data or go static and host all the data locally or somewhere else.
 
@@ -99,6 +104,12 @@ To run locally, set up the mongoDB instance first by entering: ```mongod``` then
 mongoimport --jsonArray --db DATABASENAME --collection COLLECTIONNAME --file pokedex.json
 ```
 *Note: Use ```mongopokedex.json``` if you wish to import it to a database like mLabs*
+
+If you wish to export it from your local mongoDB, enter this command into the terminal:
+
+```
+mongoexport --db DATABASENAME --collection COLLECTIONNAME --out NAME.json
+```
 
 Lastly, run:
 
