@@ -1,7 +1,4 @@
-// In the pokedex variable, what I did was created the data I will be using for the table.
-// In the future, I will be adding all 151 Pokemon from the first generation and soon Pokemon
-// of every generation! I can see myself using a JSON potentially found on the web otherwise
-// I will create my own.
+// TODO : Refactor code to make it more reusable and clean
 
 /*
 	I was learning more about templates. So what it does is it will bind rendered DOM for you. For learning purposes,
