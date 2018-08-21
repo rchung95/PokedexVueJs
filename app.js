@@ -1,7 +1,7 @@
 const express = require('express');
 const mongodb = require('mongodb');
 const app = express();
-require('dotenv').config(); //To run locally
+require('dotenv').config(); // To run locally
 
 var db;
 const COLLECTION_NAME = 'docs'
@@ -24,7 +24,7 @@ app.get('/pokedexdb', function(req, res) {
 	});
 });
 
-app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/src'));
 app.use('/scripts', express.static(__dirname + '/node_modules/vue/dist/'), express.static(__dirname + '/node_modules/chart.js/dist/'));
 app.use('/style', express.static(__dirname + '/node_modules/bulma/css/'));
 app.use('/axios', express.static(__dirname + '/node_modules/axios/dist/'))

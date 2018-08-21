@@ -14,7 +14,7 @@
 var myRadarChart;
 var pokenDex;
 
-var naturejson = naturelist;
+var natureJSON = naturelist;
 
 var stat2 = {
 	label: 'Modified Stats',
@@ -77,29 +77,29 @@ var pokeTable = {
                 // if it's a question, try to return results based on the question criteria
                 // can add more filter variety below, and set the order based on input as well 
                 // i.e. strongest or weakest, highest or lowest, etc. Will pull this stat from db.
-                let f = filterKey.toLowerCase();
+                let filteredSearch = filterKey.toLowerCase();
                 filter = (() => {
                     // set filter 
-                    if (f.includes('fastest') || f.includes('speed')) {
+                    if (filteredSearch.includes('fastest') || filteredSearch.includes('speed')) {
                         return 'spe';
-                    } else if (f.includes('strongest') || f.includes('attack') && !f.includes('special')) {
+                    } else if (filteredSearch.includes('strongest') || filteredSearch.includes('attack') && !filteredSearch.includes('special')) {
                         return 'atk';
                     } 
-                    else if (f.includes('toughest') || f.includes('defense') && !f.includes('special')) {
+                    else if (filteredSearch.includes('toughest') || filteredSearch.includes('defense') && !filteredSearch.includes('special')) {
                         return 'def';
-                    } else if (f.includes('healthiest') || f.includes('hp')) {
+                    } else if (filteredSearch.includes('healthiest') || filteredSearch.includes('hp')) {
                         return 'hp';
-                    } else if (f.includes('special attack')) {
+                    } else if (filteredSearch.includes('special attack')) {
                         return 'spatk';
-                    } else if (f.includes('special defense')) {
+                    } else if (filteredSearch.includes('special defense')) {
                         return 'spdef';
                     }
                 })();
 
                 // set order
-                if (f.includes('slowest') || f.includes('weakest')
-                    || f.includes('lightest') || f.includes('least')
-                    || f.includes('worst')) {
+                if (filteredSearch.includes('slowest') || filteredSearch.includes('weakest')
+                    || filteredSearch.includes('lightest') || filteredSearch.includes('least')
+                    || filteredSearch.includes('worst')) {
                         order = -1;
                 } else {
                     // can handle opposite cases-- most, best, greatest, etc
@@ -152,7 +152,6 @@ var pokeTable = {
 			document.getElementById("aaa").value = pokemon.ability1;
 			document.getElementById("bbb").value = pokemon.ability2;
 			document.getElementById("ccc").value = pokemon.hiddenability;
-			console.log(pokemon.ability1);
 			document.getElementById("asdfg").classList.add("is-active");
 			
 			Chart.defaults.global.tooltips.enabled = false;
@@ -222,15 +221,15 @@ var pokeTable = {
 			for (var i=0; i < 5; i++) {
 				nature = (nat[0] == ll[i]) ? 1.1 : (nat[1] == ll[i]) ? 0.9 : 1
 				if (i == 0) {
-					newAtk = Math.floor( ( ( Math.floor( ( 2 * base['atk'] + iv[1] + Math.floor(ev[1]/4) ) * level )/100 ) + 5 ) * nature )
+					newAtk = statFormula(base, iv, ev, level, 'atk', i, nature)
 				} else if (i == 1) {
-					newDef = Math.floor( ( ( Math.floor( ( 2 * base['def'] + iv[2] + Math.floor(ev[2]/4) ) * level )/100 ) + 5 ) * nature )
+					newDef = statFormula(base, iv, ev, level, 'def', i, nature)
 				} else if (i == 2) {
-					newSpAtk = Math.floor( ( ( Math.floor( ( 2 * base['spatk'] + iv[3] + Math.floor(ev[3]/4) ) * level )/100 ) + 5 ) * nature )
+					newSpAtk = statFormula(base, iv, ev, level, 'spatk', i , nature)
 				} else if (i == 3) {
-					newSpDef = Math.floor( ( ( Math.floor( ( 2 * base['spdef'] + iv[4] + Math.floor(ev[4]/4) ) * level )/100 ) + 5 ) * nature )
+					newSpDef = statFormula(base, iv, ev, level, 'spdef', i, nature)
 				} else if (i == 4) {
-					newSpe = Math.floor( ( ( Math.floor( ( 2 * base['spe'] + iv[5] + Math.floor(ev[5]/4) ) * level )/100 ) + 5 ) * nature )
+					newSpe = statFormula(base, iv, ev, level, 'spe', i, nature);
 				}
 			}
 			return [newHp, newAtk, newDef, newSpAtk, newSpDef, newSpe]
@@ -243,6 +242,10 @@ var pokeTable = {
 		}
 	}
 };
+
+function statFormula(base, iv, ev, level, type, index, nature) {
+	return Math.floor( ( ( Math.floor( ( 2 * base[type] + iv[index] + Math.floor(ev[index]/4) ) * level )/100 ) + 5 ) * nature )
+}
 
 Vue.component('poke-table', pokeTable);
 

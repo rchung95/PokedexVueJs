@@ -18,9 +18,7 @@ For version 2, I plan on doing the following:
 - Add unit tests to calculating methods
 - Make it mobile-friendly (if possible with Chart.js)
 
-Currently I am debating whether to continue using mongoDB to hold the data or go static and host all the data locally or somewhere else.
-
-Will add more if I can think of anything.
+To improve performance, I will be just using a json within the static file. In addition, I will be rewriting the frontend again to make it more clean and and reuseable.
 
 ## Languages/Framework/Database used
 - Vue.js
