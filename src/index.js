@@ -260,7 +260,7 @@ var pokedex = new Vue({
 		selected: ['atk', 'sp.atk'],
 		pokColumns: ['nDex', 'name', 'tier', 'ability1', 'ability2', 'hiddenability', 'type1', 'type2'],
 		pokemonList: [],
-		options: this.naturejson
+		options: this.natureJSON
 	},
 
 	mounted() {
