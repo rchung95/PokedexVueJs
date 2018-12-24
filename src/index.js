@@ -209,7 +209,7 @@ var pokeTable = {
 		// Need to rewrite it where the nature is a modifier of 1.1, 1.0 or 0.9
 		"calcStat": function(base, level, iv, ev, nat) {
 			pokenDex = base['orderID'] - 1; // Cannot use nDex id due to duplicates
-			var ll = ['atk', 'def', 'sp.atk', 'sp.def', 'spe'];
+			var statNames = ['hp', 'atk', 'def', 'sp.atk', 'sp.def', 'spe'];
 			var nature = 1;
 			var newAtk;
 			var newDef;
@@ -217,22 +217,29 @@ var pokeTable = {
 			var newSpDef;
 			var newSpe;
 
-			var newHp = (Math.floor( ( ( 2 * base['hp'] + iv[0] + Math.floor(ev[0]/4) ) * level )/100 ) + level + 10)
-			for (var i=0; i < 5; i++) {
-				nature = (nat[0] == ll[i]) ? 1.1 : (nat[1] == ll[i]) ? 0.9 : 1
-				if (i == 0) {
+			for (var i=0; i < 6; i++) {
+				if (isNaN(iv[i])) {
+					iv[i] = 0;
+				}
+
+				if (isNaN(ev[i])) {
+					ev[i] = 0;
+				}
+				nature = (nat[0] == statNames[i]) ? 1.1 : (nat[1] == statNames[i]) ? 0.9 : 1
+				if (i == 1) {
 					newAtk = statFormula(base, iv, ev, level, 'atk', i, nature)
-				} else if (i == 1) {
-					newDef = statFormula(base, iv, ev, level, 'def', i, nature)
 				} else if (i == 2) {
-					newSpAtk = statFormula(base, iv, ev, level, 'spatk', i , nature)
+					newDef = statFormula(base, iv, ev, level, 'def', i, nature)
 				} else if (i == 3) {
-					newSpDef = statFormula(base, iv, ev, level, 'spdef', i, nature)
+					newSpAtk = statFormula(base, iv, ev, level, 'spatk', i , nature)
 				} else if (i == 4) {
+					newSpDef = statFormula(base, iv, ev, level, 'spdef', i, nature)
+				} else if (i == 5) {
 					newSpe = statFormula(base, iv, ev, level, 'spe', i, nature);
 				}
 			}
-			return [newHp, newAtk, newDef, newSpAtk, newSpDef, newSpe]
+			var newHp = (Math.floor( ( ( 2 * base['hp'] + iv[0] + Math.floor(ev[0]/4) ) * level )/100 ) + level + 10)
+			return [newHp, newAtk, newDef, newSpAtk, newSpDef, newSpe];
 		},
 
 		// sortTable which takes in a parameter called column. This function sorts in ascending or descending order.
@@ -307,7 +314,12 @@ var pokedex = new Vue({
 		},
 
 		"checkEV": function(ev) {
-			if (this.ev[0] > 252 || this.ev[1] > 252 || this.ev[2] > 252 || this.ev[3] > 252 || this.ev[4] > 252 || this.ev[5] > 252 || this.ev[0] < 0 || this.ev[1] < 0 || this.ev[2] < 0 || this.ev[3] < 0 || this.ev[4] < 0 || this.ev[5] < 0 || (this.ev[0] + this.ev[1] + this.ev[2] + this.ev[3] + this.ev[4] + this.ev[5]) > 510 || (this.ev[0] + this.ev[1] + this.ev[2] + this.ev[3] + this.ev[4] + this.ev[5]) < 0) {
+			if (this.ev[0] > 252 || this.ev[0] < 0
+				|| this.ev[1] > 252 || this.ev[1] < 0
+				|| this.ev[2] > 252 || this.ev[2] < 0
+				|| this.ev[3] > 252 || this.ev[3] < 0
+				|| this.ev[4] > 252 || this.ev[4] < 0
+				|| this.ev[5] > 252 || this.ev[5] < 0) {
 				document.getElementById("evHp").classList.add("is-danger");
 				document.getElementById("evAtk").classList.add("is-danger");
 				document.getElementById("evDef").classList.add("is-danger");
@@ -327,15 +339,14 @@ var pokedex = new Vue({
 		},
 
 		// Need to refactor this code and its helper function better
-		"addData": function(pokemon, level) {
+		"addData": function(pokemon) {
 			this.check = true;
 			this.desiredlevel = parseInt(document.getElementById("desiredlevel").value);
 			this.iv = [parseInt(document.getElementById("ivHp").value), parseInt(document.getElementById("ivAtk").value), parseInt(document.getElementById("ivDef").value), parseInt(document.getElementById("ivSpAtk").value), parseInt(document.getElementById("ivSpDef").value), parseInt(document.getElementById("ivSpe").value)];
 			this.ev = [parseInt(document.getElementById("evHp").value), parseInt(document.getElementById("evAtk").value), parseInt(document.getElementById("evDef").value), parseInt(document.getElementById("evSpAtk").value), parseInt(document.getElementById("evSpDef").value), parseInt(document.getElementById("evSpe").value)];
-			
 			if (this.desiredlevel > 100 || this.desiredlevel < 1) {
 				document.getElementById("desiredlevel").classList.add("is-danger");
-				this.check = (this.check == true) ? false : true;
+				this.check = !this.check;
 			} else {
 				document.getElementById("desiredlevel").classList.remove("is-danger");
 			}
@@ -344,22 +355,42 @@ var pokedex = new Vue({
 			this.checkIV(this.iv);
 
 			if (this.check) {
-				var base2 = pokeTable.methods.calcStat(pokemon, this.desiredlevel, this.iv, this.ev, this.selected);
-				var base = pokeTable.methods.calcStat(pokemon, this.desiredlevel, [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], this.selected);
+				// Stats without modifications
+				var base = pokeTable.methods.calcStat(pokemon, this.desiredlevel, [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], this.selected);	
+				var baseHp = base[0];
+				var baseAtk = base[1];
+				var baseDef = base[2];
+				var baseSpAtk = base[3];
+				var baseSpDef = base[4];
+				var baseSpe = base[5];
+
+				// Stats with modfications
+				var modifiedStat = pokeTable.methods.calcStat(pokemon, this.desiredlevel, this.iv, this.ev, this.selected);
+				var modifedStatHp = modifiedStat[0];
+				var modifedStatAtk = modifiedStat[1];
+				var modifedStatDef = modifiedStat[2];
+				var modifedStatSpAtk = modifiedStat[3];
+				var modifedStatSpDef = modifiedStat[4];
+				var modifedStatSpe = modifiedStat[5];
 
 				myRadarChart.data.datasets[0].data = base;
 
-				if (base[0] != base2[0] | base[1] != base2[1] | base[2] != base2[2] | base[3] != base2[3] | base[4] != base2[4] | base[5] != base2[5]) {
+				if (baseHp != modifedStatHp
+					| baseAtk != modifedStatAtk
+					| baseDef != modifedStatDef
+					| baseSpAtk != modifedStatSpAtk
+					| baseSpDef != modifedStatSpDef
+					| baseSpe != modifedStatSpe) {
 					if (myRadarChart.data.datasets.length < 2) {
 						myRadarChart.data.datasets.push(stat2);
 					}
-					myRadarChart.data.datasets[1].data = [base2[0], base2[1], base2[2], base2[5], base2[4], base2[3]];
+					myRadarChart.data.datasets[1].data = [modifedStatHp, modifedStatAtk, modifedStatDef, modifedStatSpe, modifedStatSpDef, modifedStatSpAtk];
 
 					myRadarChart.data.datasets[1].hidden = false;
 					myRadarChart.data.datasets[1].fill = '-1';
-					myRadarChart.data.labels = ["Hp " + base['0'] + " | " + base2['0'], "Atk " + base['1']+ " | " + base2['1'], "Def " + base['2'] + " | " + base2['2'], "Spe " + base['5'] + " | " + base2['5'], "Sp.Def " + base['4'] + " | " + base2['4'], "Sp.Atk " + base['3'] + " | " + base2['3']];
+					myRadarChart.data.labels = ["Hp " + baseHp + " | " + modifedStatHp, "Atk " + baseAtk+ " | " + modifedStatAtk, "Def " + baseDef + " | " + modifedStatDef, "Spe " + baseSpe + " | " + modifedStatSpe, "Sp.Def " + baseSpDef + " | " + modifedStatSpDef, "Sp.Atk " + baseSpAtk + " | " + modifedStatSpAtk];
 				} else {
-					myRadarChart.data.labels = ["Hp " + base['0'], "Atk " + base['1'], "Def " + base['2'], "Spe " + base['5'], "Sp.Def " + base['4'], "Sp.Atk " + base['3']];
+					myRadarChart.data.labels = ["Hp " + baseHp, "Atk " + baseAtk, "Def " + baseDef, "Spe " + baseSpe, "Sp.Def " + baseSpDef, "Sp.Atk " + baseSpAtk];
 				}
 				myRadarChart.update();
 
