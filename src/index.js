@@ -148,10 +148,10 @@ var pokeTable = {
 
 		"chartMe": function (pokemon, pokemonInfo) {
 			// Need to refactor these
-			document.getElementById("fff").src = pokemon.image;
-			document.getElementById("aaa").value = pokemon.ability1;
-			document.getElementById("bbb").value = pokemon.ability2;
-			document.getElementById("ccc").value = pokemon.hiddenability;
+			document.getElementById("pokemonImage").src = pokemon.image;
+			document.getElementById("ability1").value = pokemon.ability1;
+			document.getElementById("ability2").value = pokemon.ability2;
+			document.getElementById("hiddenAbility").value = pokemon.hiddenability;
 			document.getElementById("asdfg").classList.add("is-active");
 			
 			Chart.defaults.global.tooltips.enabled = false;
@@ -209,7 +209,7 @@ var pokeTable = {
 		// Need to rewrite it where the nature is a modifier of 1.1, 1.0 or 0.9
 		"calcStat": function(base, level, iv, ev, nat) {
 			pokenDex = base['orderID'] - 1; // Cannot use nDex id due to duplicates
-			var statNames = ['hp', 'atk', 'def', 'sp.atk', 'sp.def', 'spe'];
+			var statNames = ['hp', 'atk', 'def', 'spe', 'sp.def', 'sp.atk'];
 			var nature = 1;
 			var newAtk;
 			var newDef;
@@ -231,15 +231,15 @@ var pokeTable = {
 				} else if (i == 2) {
 					newDef = statFormula(base, iv, ev, level, 'def', i, nature)
 				} else if (i == 3) {
-					newSpAtk = statFormula(base, iv, ev, level, 'spatk', i , nature)
+					newSpAtk = statFormula(base, iv, ev, level, 'spe', i , nature)
 				} else if (i == 4) {
 					newSpDef = statFormula(base, iv, ev, level, 'spdef', i, nature)
 				} else if (i == 5) {
-					newSpe = statFormula(base, iv, ev, level, 'spe', i, nature);
+					newSpe = statFormula(base, iv, ev, level, 'spatk', i, nature);
 				}
 			}
 			var newHp = (Math.floor( ( ( 2 * base['hp'] + iv[0] + Math.floor(ev[0]/4) ) * level )/100 ) + level + 10)
-			return [newHp, newAtk, newDef, newSpAtk, newSpDef, newSpe];
+			return [newHp, newAtk, newDef, newSpe, newSpDef, newSpAtk];
 		},
 
 		// sortTable which takes in a parameter called column. This function sorts in ascending or descending order.
@@ -302,7 +302,7 @@ var pokedex = new Vue({
 		},
 
 		"checkIV": function(iv) {
-			var ivList = ["ivHp", "ivAtk", "ivDef", "ivSpAtk", "ivSpDef", "ivSpe"];
+			var ivList = ["ivHp", "ivAtk", "ivDef", "ivSpe", "ivSpDef", "ivSpAtk"];
 			for (i=0; i < iv.length; i++) {
 				if (this.iv[i] > 31 || this.iv[i] < 0) {
 					document.getElementById(ivList[i]).classList.add("is-danger");
@@ -360,18 +360,18 @@ var pokedex = new Vue({
 				var baseHp = base[0];
 				var baseAtk = base[1];
 				var baseDef = base[2];
-				var baseSpAtk = base[3];
+				var baseSpAtk = base[5];
 				var baseSpDef = base[4];
-				var baseSpe = base[5];
+				var baseSpe = base[3];
 
 				// Stats with modfications
 				var modifiedStat = pokeTable.methods.calcStat(pokemon, this.desiredlevel, this.iv, this.ev, this.selected);
 				var modifedStatHp = modifiedStat[0];
 				var modifedStatAtk = modifiedStat[1];
 				var modifedStatDef = modifiedStat[2];
-				var modifedStatSpAtk = modifiedStat[3];
+				var modifedStatSpAtk = modifiedStat[5];
 				var modifedStatSpDef = modifiedStat[4];
-				var modifedStatSpe = modifiedStat[5];
+				var modifedStatSpe = modifiedStat[3];
 
 				myRadarChart.data.datasets[0].data = base;
 
@@ -384,7 +384,7 @@ var pokedex = new Vue({
 					if (myRadarChart.data.datasets.length < 2) {
 						myRadarChart.data.datasets.push(stat2);
 					}
-					myRadarChart.data.datasets[1].data = [modifedStatHp, modifedStatAtk, modifedStatDef, modifedStatSpe, modifedStatSpDef, modifedStatSpAtk];
+					myRadarChart.data.datasets[1].data = modifiedStat;
 
 					myRadarChart.data.datasets[1].hidden = false;
 					myRadarChart.data.datasets[1].fill = '-1';
